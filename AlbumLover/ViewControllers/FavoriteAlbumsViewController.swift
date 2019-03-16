@@ -21,6 +21,10 @@ class FavoriteAlbumsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
+    }
+
+    private func setup() {
         viewModel?.getAlbums(completion: { [weak self] error in
             guard let strongSelf = self else { return }
             guard error == nil else {
