@@ -23,6 +23,19 @@
 		9F6CB4C8223D053B003A88A6 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB4C7223D053B003A88A6 /* UITableViewCell+Extension.swift */; };
 		9F6CB4CA223D0555003A88A6 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB4C9223D0555003A88A6 /* UICollectionView+Extension.swift */; };
 		9F6CB4CC223D0569003A88A6 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB4CB223D0569003A88A6 /* UITableView+Extension.swift */; };
+		9F6CB4D0223D0645003A88A6 /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB4CE223D0645003A88A6 /* AlbumCollectionViewCell.swift */; };
+		9F6CB4D1223D0645003A88A6 /* AlbumCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F6CB4CF223D0645003A88A6 /* AlbumCollectionViewCell.xib */; };
+		9F6CB4D3223D08A0003A88A6 /* AlbumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB4D2223D08A0003A88A6 /* AlbumViewModel.swift */; };
+		9F6CB4D5223D0929003A88A6 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB4D4223D0929003A88A6 /* UIImageView+Extension.swift */; };
+		9F6CB4D7223D0EB8003A88A6 /* AlbumResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB4D6223D0EB8003A88A6 /* AlbumResource.swift */; };
+		9F6CB4D9223D0EF1003A88A6 /* ArtistResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB4D8223D0EF1003A88A6 /* ArtistResource.swift */; };
+		9F6CB4DC223D0F54003A88A6 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB4DB223D0F54003A88A6 /* Repository.swift */; };
+		9F6CB4DE223D0FDA003A88A6 /* OnlineRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB4DD223D0FDA003A88A6 /* OnlineRepository.swift */; };
+		9F6CB4E0223D0FF9003A88A6 /* OfflineRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB4DF223D0FF9003A88A6 /* OfflineRepository.swift */; };
+		9F6CB4E2223D10C7003A88A6 /* ImageResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB4E1223D10C7003A88A6 /* ImageResource.swift */; };
+		9F6CB4E5223D11BF003A88A6 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB4E4223D11BF003A88A6 /* Album.swift */; };
+		9F6CB4E7223D130E003A88A6 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB4E6223D130E003A88A6 /* CustomError.swift */; };
+		9F6CB4E9223D226C003A88A6 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB4E8223D226C003A88A6 /* UIViewController+Extension.swift */; };
 		F0BF9D687144B1AAEB280CC4 /* Pods_AlbumLover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90D547C9BD71F44E68DA93D7 /* Pods_AlbumLover.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +73,19 @@
 		9F6CB4C7223D053B003A88A6 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		9F6CB4C9223D0555003A88A6 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		9F6CB4CB223D0569003A88A6 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		9F6CB4CE223D0645003A88A6 /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
+		9F6CB4CF223D0645003A88A6 /* AlbumCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumCollectionViewCell.xib; sourceTree = "<group>"; };
+		9F6CB4D2223D08A0003A88A6 /* AlbumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewModel.swift; sourceTree = "<group>"; };
+		9F6CB4D4223D0929003A88A6 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		9F6CB4D6223D0EB8003A88A6 /* AlbumResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumResource.swift; sourceTree = "<group>"; };
+		9F6CB4D8223D0EF1003A88A6 /* ArtistResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistResource.swift; sourceTree = "<group>"; };
+		9F6CB4DB223D0F54003A88A6 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		9F6CB4DD223D0FDA003A88A6 /* OnlineRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineRepository.swift; sourceTree = "<group>"; };
+		9F6CB4DF223D0FF9003A88A6 /* OfflineRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineRepository.swift; sourceTree = "<group>"; };
+		9F6CB4E1223D10C7003A88A6 /* ImageResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResource.swift; sourceTree = "<group>"; };
+		9F6CB4E4223D11BF003A88A6 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		9F6CB4E6223D130E003A88A6 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		9F6CB4E8223D226C003A88A6 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		EB1A1BF88F7325883CBD1816 /* Pods-AlbumLover.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlbumLover.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlbumLover/Pods-AlbumLover.debug.xcconfig"; sourceTree = "<group>"; };
 		FD37D6DBBE5F96E1774C5692 /* Pods_AlbumLoverTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlbumLoverTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -116,6 +142,8 @@
 		9F6CB490223CF021003A88A6 /* AlbumLover */ = {
 			isa = PBXGroup;
 			children = (
+				9F6CB4DA223D0F49003A88A6 /* Network */,
+				9F6CB4CD223D0626003A88A6 /* Cells */,
 				9F6CB4B9223CF0DB003A88A6 /* Resources */,
 				9F6CB4B8223CF0C3003A88A6 /* Project files */,
 				9F6CB4B7223CF09E003A88A6 /* Helpers */,
@@ -147,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				9F6CB4BB223CF31A003A88A6 /* FavoriteAlbumsViewModel.swift */,
+				9F6CB4D2223D08A0003A88A6 /* AlbumViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -154,6 +183,8 @@
 		9F6CB4B6223CF098003A88A6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9F6CB4E3223D11AF003A88A6 /* Resources */,
+				9F6CB4E4223D11BF003A88A6 /* Album.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -165,6 +196,7 @@
 				9F6CB4BE223CF45E003A88A6 /* Storyboarded.swift */,
 				9F6CB4C0223D04D6003A88A6 /* NibLoadableView.swift */,
 				9F6CB4C2223D04E0003A88A6 /* ReusableView.swift */,
+				9F6CB4E6223D130E003A88A6 /* CustomError.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -204,8 +236,39 @@
 				9F6CB4C7223D053B003A88A6 /* UITableViewCell+Extension.swift */,
 				9F6CB4C9223D0555003A88A6 /* UICollectionView+Extension.swift */,
 				9F6CB4CB223D0569003A88A6 /* UITableView+Extension.swift */,
+				9F6CB4D4223D0929003A88A6 /* UIImageView+Extension.swift */,
+				9F6CB4E8223D226C003A88A6 /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9F6CB4CD223D0626003A88A6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9F6CB4CE223D0645003A88A6 /* AlbumCollectionViewCell.swift */,
+				9F6CB4CF223D0645003A88A6 /* AlbumCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		9F6CB4DA223D0F49003A88A6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9F6CB4DB223D0F54003A88A6 /* Repository.swift */,
+				9F6CB4DD223D0FDA003A88A6 /* OnlineRepository.swift */,
+				9F6CB4DF223D0FF9003A88A6 /* OfflineRepository.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		9F6CB4E3223D11AF003A88A6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9F6CB4D6223D0EB8003A88A6 /* AlbumResource.swift */,
+				9F6CB4D8223D0EF1003A88A6 /* ArtistResource.swift */,
+				9F6CB4E1223D10C7003A88A6 /* ImageResource.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		DA81892D5806462047554E21 /* Pods */ = {
@@ -231,6 +294,7 @@
 				9F6CB48A223CF021003A88A6 /* Sources */,
 				9F6CB48B223CF021003A88A6 /* Frameworks */,
 				9F6CB48C223CF021003A88A6 /* Resources */,
+				107D76EFC5E3780B1D586495 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -303,6 +367,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F6CB4D1223D0645003A88A6 /* AlbumCollectionViewCell.xib in Resources */,
 				9F6CB49F223CF023003A88A6 /* LaunchScreen.storyboard in Resources */,
 				9F6CB49C223CF023003A88A6 /* Assets.xcassets in Resources */,
 				9F6CB497223CF021003A88A6 /* Main.storyboard in Resources */,
@@ -319,6 +384,30 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		107D76EFC5E3780B1D586495 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AlbumLover/Pods-AlbumLover-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AlbumLover/Pods-AlbumLover-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7EB34214A32210DE1496A429 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -387,17 +476,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F6CB4E7223D130E003A88A6 /* CustomError.swift in Sources */,
+				9F6CB4D0223D0645003A88A6 /* AlbumCollectionViewCell.swift in Sources */,
 				9F6CB4CC223D0569003A88A6 /* UITableView+Extension.swift in Sources */,
+				9F6CB4DE223D0FDA003A88A6 /* OnlineRepository.swift in Sources */,
+				9F6CB4D5223D0929003A88A6 /* UIImageView+Extension.swift in Sources */,
 				9F6CB4C1223D04D6003A88A6 /* NibLoadableView.swift in Sources */,
+				9F6CB4E5223D11BF003A88A6 /* Album.swift in Sources */,
+				9F6CB4E9223D226C003A88A6 /* UIViewController+Extension.swift in Sources */,
 				9F6CB4BC223CF31A003A88A6 /* FavoriteAlbumsViewModel.swift in Sources */,
 				9F6CB49A223CF021003A88A6 /* AlbumLover.xcdatamodeld in Sources */,
 				9F6CB4BF223CF45E003A88A6 /* Storyboarded.swift in Sources */,
 				9F6CB4C8223D053B003A88A6 /* UITableViewCell+Extension.swift in Sources */,
+				9F6CB4E2223D10C7003A88A6 /* ImageResource.swift in Sources */,
+				9F6CB4E0223D0FF9003A88A6 /* OfflineRepository.swift in Sources */,
 				9F6CB4C6223D051A003A88A6 /* UICollectionViewCell+Extension.swift in Sources */,
+				9F6CB4D3223D08A0003A88A6 /* AlbumViewModel.swift in Sources */,
 				9F6CB4CA223D0555003A88A6 /* UICollectionView+Extension.swift in Sources */,
 				9F6CB494223CF021003A88A6 /* FavoriteAlbumsViewController.swift in Sources */,
+				9F6CB4DC223D0F54003A88A6 /* Repository.swift in Sources */,
 				9F6CB4C3223D04E0003A88A6 /* ReusableView.swift in Sources */,
 				9F6CB492223CF021003A88A6 /* AppDelegate.swift in Sources */,
+				9F6CB4D9223D0EF1003A88A6 /* ArtistResource.swift in Sources */,
+				9F6CB4D7223D0EB8003A88A6 /* AlbumResource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

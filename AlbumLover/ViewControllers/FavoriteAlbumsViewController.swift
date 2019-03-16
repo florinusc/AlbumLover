@@ -13,19 +13,44 @@ class FavoriteAlbumsViewController: UIViewController {
         didSet {
             collectionView.delegate = self
             collectionView.dataSource = self
+            collectionView.register(AlbumCollectionViewCell.self)
         }
     }
 
     var viewModel: FavoriteAlbumsViewModel?
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        viewModel?.getAlbums(completion: { [weak self] error in
+            guard let strongSelf = self else { return }
+            guard error == nil else {
+                strongSelf.presentAlert(with: "Error", message: error?.localizedDescription ?? "Something went wrong")
+                return
+            }
+            strongSelf.collectionView.reloadData()
+        })
+    }
 }
 
 extension FavoriteAlbumsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
-        return 0
+        return viewModel?.numberOfAlbums() ?? 0
     }
 
-    func collectionView(_: UICollectionView, cellForItemAt _: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+    func collectionView(_: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: AlbumCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
+        if let albumViewModel = viewModel?.albumViewModel(at: indexPath) {
+            cell.configure(with: albumViewModel)
+        }
+        return cell
+    }
+}
+
+extension FavoriteAlbumsViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt _: IndexPath) -> CGSize {
+        let width = (collectionView.frame.width - 30.0) / 2.0
+        let height = width * 1.5
+        return CGSize(width: width, height: height)
     }
 }
 
