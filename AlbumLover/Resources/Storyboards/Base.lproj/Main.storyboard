@@ -49,7 +49,48 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-175.19999999999999" y="123.68815592203899"/>
+            <point key="canvasLocation" x="-857" y="109"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="Cs8-bh-5IL">
+            <objects>
+                <viewController storyboardIdentifier="SearchViewController" id="gMQ-aQ-V01" customClass="SearchViewController" customModule="AlbumLover" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="92l-fb-zWp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ddU-RG-6wv">
+                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gMQ-aQ-V01" id="jOe-Xs-PYu"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DOF-LK-qKQ">
+                                <rect key="frame" x="0.0" y="76" width="375" height="591"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DOF-LK-qKQ" firstAttribute="bottom" secondItem="faT-5R-oyQ" secondAttribute="bottom" id="0RF-Uy-WaD"/>
+                            <constraint firstItem="DOF-LK-qKQ" firstAttribute="top" secondItem="ddU-RG-6wv" secondAttribute="bottom" id="Liu-mX-2rO"/>
+                            <constraint firstItem="DOF-LK-qKQ" firstAttribute="leading" secondItem="faT-5R-oyQ" secondAttribute="leading" id="PEv-Wf-3jp"/>
+                            <constraint firstItem="ddU-RG-6wv" firstAttribute="trailing" secondItem="faT-5R-oyQ" secondAttribute="trailing" id="ZpA-KQ-vG8"/>
+                            <constraint firstItem="ddU-RG-6wv" firstAttribute="leading" secondItem="faT-5R-oyQ" secondAttribute="leading" id="fcf-Vn-y6Y"/>
+                            <constraint firstItem="faT-5R-oyQ" firstAttribute="trailing" secondItem="DOF-LK-qKQ" secondAttribute="trailing" id="gfr-Fw-fNa"/>
+                            <constraint firstItem="ddU-RG-6wv" firstAttribute="top" secondItem="faT-5R-oyQ" secondAttribute="top" id="lOZ-07-JE9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="faT-5R-oyQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="ddU-RG-6wv" id="oMD-Dn-9HN"/>
+                        <outlet property="tableView" destination="DOF-LK-qKQ" id="wWx-Qm-gcM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lRX-4P-eo4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="47" y="108"/>
         </scene>
     </scenes>
 </document>

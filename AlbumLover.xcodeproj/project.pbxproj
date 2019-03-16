@@ -38,6 +38,9 @@
 		9F6CB4E9223D226C003A88A6 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB4E8223D226C003A88A6 /* UIViewController+Extension.swift */; };
 		9F8099B2223D3457006FBF81 /* FavoriteAlbumsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8099B1223D3457006FBF81 /* FavoriteAlbumsViewModelTests.swift */; };
 		9F8099B4223D34B1006FBF81 /* MockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8099B3223D34B1006FBF81 /* MockRepository.swift */; };
+		9F8099B6223D48C3006FBF81 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8099B5223D48C3006FBF81 /* SearchViewController.swift */; };
+		9F8099B8223D4B7A006FBF81 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8099B7223D4B7A006FBF81 /* Artist.swift */; };
+		9F8099BA223D4BE3006FBF81 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8099B9223D4BE3006FBF81 /* SearchViewModel.swift */; };
 		F0BF9D687144B1AAEB280CC4 /* Pods_AlbumLover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90D547C9BD71F44E68DA93D7 /* Pods_AlbumLover.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +93,9 @@
 		9F6CB4E8223D226C003A88A6 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		9F8099B1223D3457006FBF81 /* FavoriteAlbumsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAlbumsViewModelTests.swift; sourceTree = "<group>"; };
 		9F8099B3223D34B1006FBF81 /* MockRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepository.swift; sourceTree = "<group>"; };
+		9F8099B5223D48C3006FBF81 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		9F8099B7223D4B7A006FBF81 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		9F8099B9223D4BE3006FBF81 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		EB1A1BF88F7325883CBD1816 /* Pods-AlbumLover.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlbumLover.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlbumLover/Pods-AlbumLover.debug.xcconfig"; sourceTree = "<group>"; };
 		FD37D6DBBE5F96E1774C5692 /* Pods_AlbumLoverTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlbumLoverTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -173,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				9F6CB493223CF021003A88A6 /* FavoriteAlbumsViewController.swift */,
+				9F8099B5223D48C3006FBF81 /* SearchViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -182,6 +189,7 @@
 			children = (
 				9F6CB4BB223CF31A003A88A6 /* FavoriteAlbumsViewModel.swift */,
 				9F6CB4D2223D08A0003A88A6 /* AlbumViewModel.swift */,
+				9F8099B9223D4BE3006FBF81 /* SearchViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -191,6 +199,7 @@
 			children = (
 				9F6CB4E3223D11AF003A88A6 /* Resources */,
 				9F6CB4E4223D11BF003A88A6 /* Album.swift */,
+				9F8099B7223D4B7A006FBF81 /* Artist.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -500,10 +509,13 @@
 				9F6CB4D3223D08A0003A88A6 /* AlbumViewModel.swift in Sources */,
 				9F6CB4CA223D0555003A88A6 /* UICollectionView+Extension.swift in Sources */,
 				9F6CB494223CF021003A88A6 /* FavoriteAlbumsViewController.swift in Sources */,
+				9F8099BA223D4BE3006FBF81 /* SearchViewModel.swift in Sources */,
+				9F8099B6223D48C3006FBF81 /* SearchViewController.swift in Sources */,
 				9F6CB4DC223D0F54003A88A6 /* Repository.swift in Sources */,
 				9F6CB4C3223D04E0003A88A6 /* ReusableView.swift in Sources */,
 				9F6CB492223CF021003A88A6 /* AppDelegate.swift in Sources */,
 				9F6CB4D9223D0EF1003A88A6 /* ArtistResource.swift in Sources */,
+				9F8099B8223D4B7A006FBF81 /* Artist.swift in Sources */,
 				9F6CB4D7223D0EB8003A88A6 /* AlbumResource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

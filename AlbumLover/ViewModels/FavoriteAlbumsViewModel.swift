@@ -41,4 +41,8 @@ class FavoriteAlbumsViewModel {
         let album = albums[indexPath.item]
         return AlbumViewModel(with: album)
     }
+
+    func getTitle() -> String {
+        return repository is OfflineRepository ? "Favorite Albums" : ""
+    }
 }

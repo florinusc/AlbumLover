@@ -20,4 +20,8 @@ class OfflineRepository: Repository {
                Album(name: "Glory", artist: "Bono", imageURL: "https://lastfm-img2.akamaized.net/i/u/300x300/3b54885952161aaea4ce2965b2db1638.png"),
                Album(name: "Graduation", artist: "Kanye", imageURL: "https://lastfm-img2.akamaized.net/i/u/300x300/3b54885952161aaea4ce2965b2db1638.png")], nil)
     }
+
+    func getArtist(with _: String, completion block: @escaping ([Artist]?, Error?) -> Void) {
+        block([Artist(id: "", name: "Cher")], nil)
+    }
 }

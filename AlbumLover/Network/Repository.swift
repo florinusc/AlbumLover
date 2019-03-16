@@ -10,4 +10,5 @@ import Foundation
 
 protocol Repository {
     func getAlbums(completion block: @escaping ([Album]?, Error?) -> Void)
+    func getArtist(with name: String, completion block: @escaping ([Artist]?, Error?) -> Void)
 }

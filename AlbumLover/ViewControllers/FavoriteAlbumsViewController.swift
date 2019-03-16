@@ -25,6 +25,7 @@ class FavoriteAlbumsViewController: UIViewController {
     }
 
     private func setup() {
+        setupNavBar()
         viewModel?.getAlbums(completion: { [weak self] error in
             guard let strongSelf = self else { return }
             guard error == nil else {
@@ -33,6 +34,19 @@ class FavoriteAlbumsViewController: UIViewController {
             }
             strongSelf.collectionView.reloadData()
         })
+    }
+
+    private func setupNavBar() {
+        title = viewModel?.getTitle()
+        let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(goToSearch))
+        navigationItem.rightBarButtonItem = searchButton
+    }
+
+    @objc private func goToSearch() {
+        let searchViewModel = SearchViewModel()
+        let searchViewController = SearchViewController.getInstance()
+        searchViewController.viewModel = searchViewModel
+        navigationController?.pushViewController(searchViewController, animated: true)
     }
 }
 
