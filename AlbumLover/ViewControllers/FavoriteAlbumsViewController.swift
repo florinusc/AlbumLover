@@ -40,6 +40,7 @@ class FavoriteAlbumsViewController: UIViewController {
         title = viewModel?.getTitle()
         let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(goToSearch))
         navigationItem.rightBarButtonItem = searchButton
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 
     @objc private func goToSearch() {
