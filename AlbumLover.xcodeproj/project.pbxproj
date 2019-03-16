@@ -79,13 +79,12 @@
 		9F6CB490223CF021003A88A6 /* AlbumLover */ = {
 			isa = PBXGroup;
 			children = (
-				9F6CB491223CF021003A88A6 /* AppDelegate.swift */,
-				9F6CB493223CF021003A88A6 /* ViewController.swift */,
-				9F6CB495223CF021003A88A6 /* Main.storyboard */,
-				9F6CB49B223CF023003A88A6 /* Assets.xcassets */,
-				9F6CB49D223CF023003A88A6 /* LaunchScreen.storyboard */,
-				9F6CB4A0223CF023003A88A6 /* Info.plist */,
-				9F6CB498223CF021003A88A6 /* AlbumLover.xcdatamodeld */,
+				9F6CB4B9223CF0DB003A88A6 /* Resources */,
+				9F6CB4B8223CF0C3003A88A6 /* Project files */,
+				9F6CB4B7223CF09E003A88A6 /* Helpers */,
+				9F6CB4B6223CF098003A88A6 /* Models */,
+				9F6CB4B5223CF092003A88A6 /* ViewModels */,
+				9F6CB4B4223CF08A003A88A6 /* ViewControllers */,
 			);
 			path = AlbumLover;
 			sourceTree = "<group>";
@@ -97,6 +96,63 @@
 				9F6CB4AB223CF023003A88A6 /* Info.plist */,
 			);
 			path = AlbumLoverTests;
+			sourceTree = "<group>";
+		};
+		9F6CB4B4223CF08A003A88A6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9F6CB493223CF021003A88A6 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9F6CB4B5223CF092003A88A6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9F6CB4B6223CF098003A88A6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9F6CB4B7223CF09E003A88A6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		9F6CB4B8223CF0C3003A88A6 /* Project files */ = {
+			isa = PBXGroup;
+			children = (
+				9F6CB491223CF021003A88A6 /* AppDelegate.swift */,
+				9F6CB4A0223CF023003A88A6 /* Info.plist */,
+			);
+			path = "Project files";
+			sourceTree = "<group>";
+		};
+		9F6CB4B9223CF0DB003A88A6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9F6CB4BA223CF0F4003A88A6 /* Storyboards */,
+				9F6CB49B223CF023003A88A6 /* Assets.xcassets */,
+				9F6CB498223CF021003A88A6 /* AlbumLover.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9F6CB4BA223CF0F4003A88A6 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				9F6CB49D223CF023003A88A6 /* LaunchScreen.storyboard */,
+				9F6CB495223CF021003A88A6 /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,7 +422,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8CEQW7LX82;
-				INFOPLIST_FILE = AlbumLover/Info.plist;
+				INFOPLIST_FILE = "AlbumLover/Project Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -384,7 +441,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8CEQW7LX82;
-				INFOPLIST_FILE = AlbumLover/Info.plist;
+				INFOPLIST_FILE = "AlbumLover/Project Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
