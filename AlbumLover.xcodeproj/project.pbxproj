@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		627DEB5F93034D355B568B6E /* Pods_AlbumLoverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD37D6DBBE5F96E1774C5692 /* Pods_AlbumLoverTests.framework */; };
 		9F6CB492223CF021003A88A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB491223CF021003A88A6 /* AppDelegate.swift */; };
-		9F6CB494223CF021003A88A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB493223CF021003A88A6 /* ViewController.swift */; };
+		9F6CB494223CF021003A88A6 /* FavoriteAlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB493223CF021003A88A6 /* FavoriteAlbumsViewController.swift */; };
 		9F6CB497223CF021003A88A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F6CB495223CF021003A88A6 /* Main.storyboard */; };
 		9F6CB49A223CF021003A88A6 /* AlbumLover.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB498223CF021003A88A6 /* AlbumLover.xcdatamodeld */; };
 		9F6CB49C223CF023003A88A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F6CB49B223CF023003A88A6 /* Assets.xcassets */; };
 		9F6CB49F223CF023003A88A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F6CB49D223CF023003A88A6 /* LaunchScreen.storyboard */; };
 		9F6CB4AA223CF023003A88A6 /* AlbumLoverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB4A9223CF023003A88A6 /* AlbumLoverTests.swift */; };
+		9F6CB4BC223CF31A003A88A6 /* FavoriteAlbumsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB4BB223CF31A003A88A6 /* FavoriteAlbumsViewModel.swift */; };
+		F0BF9D687144B1AAEB280CC4 /* Pods_AlbumLover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90D547C9BD71F44E68DA93D7 /* Pods_AlbumLover.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,9 +30,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7061DC1C3EA8F400378C22F9 /* Pods-AlbumLover.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlbumLover.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlbumLover/Pods-AlbumLover.release.xcconfig"; sourceTree = "<group>"; };
+		90D547C9BD71F44E68DA93D7 /* Pods_AlbumLover.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlbumLover.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9605ADA899F5D9007E5052FB /* Pods-AlbumLoverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlbumLoverTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlbumLoverTests/Pods-AlbumLoverTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9DD0B1A25DDD95593B20B165 /* Pods-AlbumLoverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlbumLoverTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlbumLoverTests/Pods-AlbumLoverTests.release.xcconfig"; sourceTree = "<group>"; };
 		9F6CB48E223CF021003A88A6 /* AlbumLover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlbumLover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F6CB491223CF021003A88A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9F6CB493223CF021003A88A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9F6CB493223CF021003A88A6 /* FavoriteAlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAlbumsViewController.swift; sourceTree = "<group>"; };
 		9F6CB496223CF021003A88A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F6CB499223CF021003A88A6 /* AlbumLover.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AlbumLover.xcdatamodel; sourceTree = "<group>"; };
 		9F6CB49B223CF023003A88A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +45,9 @@
 		9F6CB4A5223CF023003A88A6 /* AlbumLoverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlbumLoverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F6CB4A9223CF023003A88A6 /* AlbumLoverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumLoverTests.swift; sourceTree = "<group>"; };
 		9F6CB4AB223CF023003A88A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F6CB4BB223CF31A003A88A6 /* FavoriteAlbumsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAlbumsViewModel.swift; sourceTree = "<group>"; };
+		EB1A1BF88F7325883CBD1816 /* Pods-AlbumLover.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlbumLover.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlbumLover/Pods-AlbumLover.debug.xcconfig"; sourceTree = "<group>"; };
+		FD37D6DBBE5F96E1774C5692 /* Pods_AlbumLoverTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlbumLoverTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0BF9D687144B1AAEB280CC4 /* Pods_AlbumLover.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +63,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				627DEB5F93034D355B568B6E /* Pods_AlbumLoverTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		93AB27AF14BA9A187F9D1D2F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90D547C9BD71F44E68DA93D7 /* Pods_AlbumLover.framework */,
+				FD37D6DBBE5F96E1774C5692 /* Pods_AlbumLoverTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9F6CB485223CF021003A88A6 = {
 			isa = PBXGroup;
 			children = (
 				9F6CB490223CF021003A88A6 /* AlbumLover */,
 				9F6CB4A8223CF023003A88A6 /* AlbumLoverTests */,
 				9F6CB48F223CF021003A88A6 /* Products */,
+				DA81892D5806462047554E21 /* Pods */,
+				93AB27AF14BA9A187F9D1D2F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,7 +124,7 @@
 		9F6CB4B4223CF08A003A88A6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				9F6CB493223CF021003A88A6 /* ViewController.swift */,
+				9F6CB493223CF021003A88A6 /* FavoriteAlbumsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -109,6 +132,7 @@
 		9F6CB4B5223CF092003A88A6 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				9F6CB4BB223CF31A003A88A6 /* FavoriteAlbumsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -155,6 +179,17 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		DA81892D5806462047554E21 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EB1A1BF88F7325883CBD1816 /* Pods-AlbumLover.debug.xcconfig */,
+				7061DC1C3EA8F400378C22F9 /* Pods-AlbumLover.release.xcconfig */,
+				9605ADA899F5D9007E5052FB /* Pods-AlbumLoverTests.debug.xcconfig */,
+				9DD0B1A25DDD95593B20B165 /* Pods-AlbumLoverTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,6 +197,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F6CB4AE223CF023003A88A6 /* Build configuration list for PBXNativeTarget "AlbumLover" */;
 			buildPhases = (
+				E212C8FFD7001343BFAE42DD /* [CP] Check Pods Manifest.lock */,
+				9F6CB4BD223CF3A1003A88A6 /* ShellScript */,
 				9F6CB48A223CF021003A88A6 /* Sources */,
 				9F6CB48B223CF021003A88A6 /* Frameworks */,
 				9F6CB48C223CF021003A88A6 /* Resources */,
@@ -179,6 +216,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F6CB4B1223CF023003A88A6 /* Build configuration list for PBXNativeTarget "AlbumLoverTests" */;
 			buildPhases = (
+				7EB34214A32210DE1496A429 /* [CP] Check Pods Manifest.lock */,
 				9F6CB4A1223CF023003A88A6 /* Sources */,
 				9F6CB4A2223CF023003A88A6 /* Frameworks */,
 				9F6CB4A3223CF023003A88A6 /* Resources */,
@@ -251,13 +289,78 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7EB34214A32210DE1496A429 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AlbumLoverTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F6CB4BD223CF3A1003A88A6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"${SRCROOT}/AlbumLover\"\n";
+		};
+		E212C8FFD7001343BFAE42DD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AlbumLover-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9F6CB48A223CF021003A88A6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F6CB4BC223CF31A003A88A6 /* FavoriteAlbumsViewModel.swift in Sources */,
 				9F6CB49A223CF021003A88A6 /* AlbumLover.xcdatamodeld in Sources */,
-				9F6CB494223CF021003A88A6 /* ViewController.swift in Sources */,
+				9F6CB494223CF021003A88A6 /* FavoriteAlbumsViewController.swift in Sources */,
 				9F6CB492223CF021003A88A6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,6 +521,7 @@
 		};
 		9F6CB4AF223CF023003A88A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB1A1BF88F7325883CBD1816 /* Pods-AlbumLover.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -437,6 +541,7 @@
 		};
 		9F6CB4B0223CF023003A88A6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7061DC1C3EA8F400378C22F9 /* Pods-AlbumLover.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -456,6 +561,7 @@
 		};
 		9F6CB4B2223CF023003A88A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9605ADA899F5D9007E5052FB /* Pods-AlbumLoverTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -477,6 +583,7 @@
 		};
 		9F6CB4B3223CF023003A88A6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DD0B1A25DDD95593B20B165 /* Pods-AlbumLoverTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
