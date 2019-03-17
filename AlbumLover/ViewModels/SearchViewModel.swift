@@ -17,7 +17,7 @@ class SearchViewModel {
     }
 
     func getArtists(with name: String, completion block: @escaping (Error?) -> Void) {
-        repository.getArtist(with: name) { [weak self] artists, error in
+        repository.getArtists(with: name) { [weak self] artists, error in
             guard error == nil else {
                 block(error!)
                 return
