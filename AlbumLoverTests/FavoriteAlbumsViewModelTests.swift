@@ -11,12 +11,12 @@ import XCTest
 
 class FavoriteAlbumsViewModelTests: XCTestCase {
     
-    var favoriteAlbumsViewModel: FavoriteAlbumsViewModel!
-    var favoriteAlbumsViewModelWithError: FavoriteAlbumsViewModel!
+    var favoriteAlbumsViewModel: AlbumsViewModel!
+    var favoriteAlbumsViewModelWithError: AlbumsViewModel!
     
     override func setUp() {
-        favoriteAlbumsViewModel = FavoriteAlbumsViewModel.init(with: MockRepository())
-        favoriteAlbumsViewModelWithError = FavoriteAlbumsViewModel.init(with: MockRepository(shouldThrowError: true))
+        favoriteAlbumsViewModel = AlbumsViewModel.init(with: MockRepository())
+        favoriteAlbumsViewModelWithError = AlbumsViewModel.init(with: MockRepository(shouldThrowError: true))
     }
     
     func getAlbums() {

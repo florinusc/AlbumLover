@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		627DEB5F93034D355B568B6E /* Pods_AlbumLoverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD37D6DBBE5F96E1774C5692 /* Pods_AlbumLoverTests.framework */; };
 		9F6CB492223CF021003A88A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB491223CF021003A88A6 /* AppDelegate.swift */; };
-		9F6CB494223CF021003A88A6 /* FavoriteAlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB493223CF021003A88A6 /* FavoriteAlbumsViewController.swift */; };
+		9F6CB494223CF021003A88A6 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB493223CF021003A88A6 /* AlbumsViewController.swift */; };
 		9F6CB497223CF021003A88A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F6CB495223CF021003A88A6 /* Main.storyboard */; };
 		9F6CB49A223CF021003A88A6 /* AlbumLover.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB498223CF021003A88A6 /* AlbumLover.xcdatamodeld */; };
 		9F6CB49C223CF023003A88A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F6CB49B223CF023003A88A6 /* Assets.xcassets */; };
 		9F6CB49F223CF023003A88A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F6CB49D223CF023003A88A6 /* LaunchScreen.storyboard */; };
 		9F6CB4AA223CF023003A88A6 /* AlbumViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB4A9223CF023003A88A6 /* AlbumViewModelTests.swift */; };
-		9F6CB4BC223CF31A003A88A6 /* FavoriteAlbumsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB4BB223CF31A003A88A6 /* FavoriteAlbumsViewModel.swift */; };
+		9F6CB4BC223CF31A003A88A6 /* AlbumsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB4BB223CF31A003A88A6 /* AlbumsViewModel.swift */; };
 		9F6CB4BF223CF45E003A88A6 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB4BE223CF45E003A88A6 /* Storyboarded.swift */; };
 		9F6CB4C1223D04D6003A88A6 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB4C0223D04D6003A88A6 /* NibLoadableView.swift */; };
 		9F6CB4C3223D04E0003A88A6 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CB4C2223D04E0003A88A6 /* ReusableView.swift */; };
@@ -61,7 +61,7 @@
 		9DD0B1A25DDD95593B20B165 /* Pods-AlbumLoverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlbumLoverTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlbumLoverTests/Pods-AlbumLoverTests.release.xcconfig"; sourceTree = "<group>"; };
 		9F6CB48E223CF021003A88A6 /* AlbumLover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlbumLover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F6CB491223CF021003A88A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9F6CB493223CF021003A88A6 /* FavoriteAlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAlbumsViewController.swift; sourceTree = "<group>"; };
+		9F6CB493223CF021003A88A6 /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
 		9F6CB496223CF021003A88A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F6CB499223CF021003A88A6 /* AlbumLover.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AlbumLover.xcdatamodel; sourceTree = "<group>"; };
 		9F6CB49B223CF023003A88A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,7 +70,7 @@
 		9F6CB4A5223CF023003A88A6 /* AlbumLoverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlbumLoverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F6CB4A9223CF023003A88A6 /* AlbumViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewModelTests.swift; sourceTree = "<group>"; };
 		9F6CB4AB223CF023003A88A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9F6CB4BB223CF31A003A88A6 /* FavoriteAlbumsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAlbumsViewModel.swift; sourceTree = "<group>"; };
+		9F6CB4BB223CF31A003A88A6 /* AlbumsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewModel.swift; sourceTree = "<group>"; };
 		9F6CB4BE223CF45E003A88A6 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		9F6CB4C0223D04D6003A88A6 /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
 		9F6CB4C2223D04E0003A88A6 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 		9F6CB4B4223CF08A003A88A6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				9F6CB493223CF021003A88A6 /* FavoriteAlbumsViewController.swift */,
+				9F6CB493223CF021003A88A6 /* AlbumsViewController.swift */,
 				9F8099B5223D48C3006FBF81 /* SearchViewController.swift */,
 			);
 			path = ViewControllers;
@@ -187,7 +187,7 @@
 		9F6CB4B5223CF092003A88A6 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				9F6CB4BB223CF31A003A88A6 /* FavoriteAlbumsViewModel.swift */,
+				9F6CB4BB223CF31A003A88A6 /* AlbumsViewModel.swift */,
 				9F6CB4D2223D08A0003A88A6 /* AlbumViewModel.swift */,
 				9F8099B9223D4BE3006FBF81 /* SearchViewModel.swift */,
 			);
@@ -499,7 +499,7 @@
 				9F6CB4C1223D04D6003A88A6 /* NibLoadableView.swift in Sources */,
 				9F6CB4E5223D11BF003A88A6 /* Album.swift in Sources */,
 				9F6CB4E9223D226C003A88A6 /* UIViewController+Extension.swift in Sources */,
-				9F6CB4BC223CF31A003A88A6 /* FavoriteAlbumsViewModel.swift in Sources */,
+				9F6CB4BC223CF31A003A88A6 /* AlbumsViewModel.swift in Sources */,
 				9F6CB49A223CF021003A88A6 /* AlbumLover.xcdatamodeld in Sources */,
 				9F6CB4BF223CF45E003A88A6 /* Storyboarded.swift in Sources */,
 				9F6CB4C8223D053B003A88A6 /* UITableViewCell+Extension.swift in Sources */,
@@ -508,7 +508,7 @@
 				9F6CB4C6223D051A003A88A6 /* UICollectionViewCell+Extension.swift in Sources */,
 				9F6CB4D3223D08A0003A88A6 /* AlbumViewModel.swift in Sources */,
 				9F6CB4CA223D0555003A88A6 /* UICollectionView+Extension.swift in Sources */,
-				9F6CB494223CF021003A88A6 /* FavoriteAlbumsViewController.swift in Sources */,
+				9F6CB494223CF021003A88A6 /* AlbumsViewController.swift in Sources */,
 				9F8099BA223D4BE3006FBF81 /* SearchViewModel.swift in Sources */,
 				9F8099B6223D48C3006FBF81 /* SearchViewController.swift in Sources */,
 				9F6CB4DC223D0F54003A88A6 /* Repository.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FavoriteAlbumsViewController: UIViewController {
+class AlbumsViewController: UIViewController {
     @IBOutlet private var collectionView: UICollectionView! {
         didSet {
             collectionView.delegate = self
@@ -17,7 +17,7 @@ class FavoriteAlbumsViewController: UIViewController {
         }
     }
 
-    var viewModel: FavoriteAlbumsViewModel?
+    var viewModel: AlbumsViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,8 @@ class FavoriteAlbumsViewController: UIViewController {
     }
 
     private func setupNavBar() {
-        title = viewModel?.getTitle()
+        title = viewModel.getTitle()
+        guard viewModel.shouldShowSearchButton() else { return }
         let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(goToSearch))
         navigationItem.rightBarButtonItem = searchButton
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
@@ -51,21 +52,21 @@ class FavoriteAlbumsViewController: UIViewController {
     }
 }
 
-extension FavoriteAlbumsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension AlbumsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
-        return viewModel?.numberOfAlbums() ?? 0
+        return viewModel.numberOfAlbums()
     }
 
     func collectionView(_: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: AlbumCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
-        if let albumViewModel = viewModel?.albumViewModel(at: indexPath) {
+        if let albumViewModel = viewModel.albumViewModel(at: indexPath) {
             cell.configure(with: albumViewModel)
         }
         return cell
     }
 }
 
-extension FavoriteAlbumsViewController: UICollectionViewDelegateFlowLayout {
+extension AlbumsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt _: IndexPath) -> CGSize {
         let width = (collectionView.frame.width - 30.0) / 2.0
         let height = width * 1.5
@@ -73,7 +74,7 @@ extension FavoriteAlbumsViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension FavoriteAlbumsViewController: Storyboarded {
+extension AlbumsViewController: Storyboarded {
     static var storyboardName: String {
         return "Main"
     }

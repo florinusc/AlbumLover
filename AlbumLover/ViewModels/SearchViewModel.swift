@@ -36,6 +36,10 @@ class SearchViewModel {
         return artists.count
     }
 
+    func artist(at indexPath: IndexPath) -> Artist {
+        return artists[indexPath.row]
+    }
+
     func artistName(at indexPath: IndexPath) -> String {
         guard indexPath.row < artists.count else { return "" }
         return artists[indexPath.row].name

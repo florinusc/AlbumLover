@@ -8,12 +8,14 @@
 
 import Foundation
 
-class FavoriteAlbumsViewModel {
+class AlbumsViewModel {
     private var repository: Repository?
     private var albums: [Album] = []
+    private var artist: Artist?
 
-    init(with repository: Repository = OfflineRepository()) {
+    init(with repository: Repository = OfflineRepository(), artist: Artist? = nil) {
         self.repository = repository
+        self.artist = artist
     }
 
     func getAlbums(completion block: @escaping (Error?) -> Void) {
@@ -43,6 +45,13 @@ class FavoriteAlbumsViewModel {
     }
 
     func getTitle() -> String {
+        if let artist = artist {
+            return artist.name
+        }
         return repository is OfflineRepository ? "Favorite Albums" : ""
+    }
+
+    func shouldShowSearchButton() -> Bool {
+        return artist == nil
     }
 }

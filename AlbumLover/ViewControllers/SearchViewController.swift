@@ -24,7 +24,7 @@ class SearchViewController: UIViewController {
         }
     }
 
-    var viewModel: SearchViewModel?
+    var viewModel: SearchViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,10 +33,11 @@ class SearchViewController: UIViewController {
 
     private func setup() {
         title = "Search"
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 
     private func filterContentForSearchText(text: String) {
-        viewModel?.getArtists(with: text.lowercased(), completion: { [weak self] error in
+        viewModel.getArtists(with: text.lowercased(), completion: { [weak self] error in
             guard let strongSelf = self else { return }
             guard error == nil else {
                 strongSelf.presentAlert(with: "Error", message: error?.localizedDescription ?? "Something went wrong")
@@ -45,21 +46,30 @@ class SearchViewController: UIViewController {
             strongSelf.tableView.reloadData()
         })
     }
+
+    private func goToAlbumsByArtist(at indexPath: IndexPath) {
+        let artist = viewModel.artist(at: indexPath)
+        let albumsViewController = AlbumsViewController.getInstance()
+        let albumsViewModel = AlbumsViewModel(artist: artist)
+        albumsViewController.viewModel = albumsViewModel
+        navigationController?.pushViewController(albumsViewController, animated: true)
+    }
 }
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        return viewModel?.numberOfArtists() ?? 0
+        return viewModel.numberOfArtists()
     }
 
     func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = viewModel?.artistName(at: indexPath)
+        cell.textLabel?.text = viewModel.artistName(at: indexPath)
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        goToAlbumsByArtist(at: indexPath)
     }
 }
 
