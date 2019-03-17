@@ -40,7 +40,7 @@ class SearchViewController: UIViewController {
         viewModel.getArtists(with: text.lowercased(), completion: { [weak self] error in
             guard let strongSelf = self else { return }
             guard error == nil else {
-                strongSelf.presentAlert(with: "Error", message: error?.localizedDescription ?? "Something went wrong")
+                strongSelf.presentAlert(with: "Error", message: error!.localizedDescription)
                 return
             }
             strongSelf.tableView.reloadData()

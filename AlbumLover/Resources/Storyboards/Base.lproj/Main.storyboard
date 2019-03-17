@@ -101,14 +101,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bix-Lw-fgq">
-                                <rect key="frame" x="0.0" y="20" width="320" height="320"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bix-Lw-fgq">
+                                <rect key="frame" x="50" y="70" width="220" height="220"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Bix-Lw-fgq" secondAttribute="height" id="XrR-Rv-gpE"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Greatest Hits" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3l-f6-C0B">
-                                <rect key="frame" x="10" y="360" width="300" height="21"/>
+                                <rect key="frame" x="10" y="310" width="300" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="a3h-4E-imM"/>
                                 </constraints>
@@ -117,7 +122,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cher" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WM6-OY-gbE">
-                                <rect key="frame" x="10" y="389" width="300" height="21"/>
+                                <rect key="frame" x="10" y="339" width="300" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="5kc-7k-N1n"/>
                                 </constraints>
@@ -126,22 +131,48 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tCn-Mn-EJg">
-                                <rect key="frame" x="0.0" y="418" width="320" height="150"/>
+                                <rect key="frame" x="0.0" y="368" width="320" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="xNY-Mz-3av" id="G1s-Vx-SgS"/>
                                     <outlet property="delegate" destination="xNY-Mz-3av" id="lGI-39-wYh"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bh-9Y-U3R">
+                                <rect key="frame" x="280" y="30" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Shp-Ga-eQi"/>
+                                    <constraint firstAttribute="width" constant="30" id="wKA-Qc-1KY"/>
+                                </constraints>
+                                <state key="normal" image="closeButton"/>
+                                <connections>
+                                    <action selector="onCloseButtonTapped:" destination="xNY-Mz-3av" eventType="touchUpInside" id="Pdc-9s-qDm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKi-t1-87O">
+                                <rect key="frame" x="10" y="30" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5j7-Ve-3xy"/>
+                                    <constraint firstAttribute="width" constant="30" id="fix-D5-C0U"/>
+                                </constraints>
+                                <state key="normal" image="heartEmpty"/>
+                                <connections>
+                                    <action selector="onHeartButtonTapped:" destination="xNY-Mz-3av" eventType="touchUpInside" id="OA9-m3-JRy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="WM6-OY-gbE" firstAttribute="top" secondItem="m3l-f6-C0B" secondAttribute="bottom" constant="8" id="2c6-Ad-fc9"/>
-                            <constraint firstItem="Bix-Lw-fgq" firstAttribute="top" secondItem="yt3-k9-Br7" secondAttribute="top" id="IjH-v3-FG2"/>
+                            <constraint firstItem="3bh-9Y-U3R" firstAttribute="top" secondItem="yt3-k9-Br7" secondAttribute="top" constant="10" id="8jI-CX-Mnd"/>
+                            <constraint firstItem="eKi-t1-87O" firstAttribute="top" secondItem="yt3-k9-Br7" secondAttribute="top" constant="10" id="Adu-Fi-tcn"/>
+                            <constraint firstItem="yt3-k9-Br7" firstAttribute="trailing" secondItem="3bh-9Y-U3R" secondAttribute="trailing" constant="10" id="EUR-rs-laG"/>
+                            <constraint firstItem="Bix-Lw-fgq" firstAttribute="top" secondItem="yt3-k9-Br7" secondAttribute="top" constant="50" id="IjH-v3-FG2"/>
                             <constraint firstItem="m3l-f6-C0B" firstAttribute="leading" secondItem="yt3-k9-Br7" secondAttribute="leading" constant="10" id="Ikp-0h-X5X"/>
                             <constraint firstItem="yt3-k9-Br7" firstAttribute="trailing" secondItem="WM6-OY-gbE" secondAttribute="trailing" constant="10" id="TaG-4l-Nmd"/>
-                            <constraint firstItem="Bix-Lw-fgq" firstAttribute="trailing" secondItem="yt3-k9-Br7" secondAttribute="trailing" id="Xb3-IK-bht"/>
-                            <constraint firstItem="Bix-Lw-fgq" firstAttribute="leading" secondItem="yt3-k9-Br7" secondAttribute="leading" id="Ybi-BY-rYP"/>
+                            <constraint firstItem="eKi-t1-87O" firstAttribute="leading" secondItem="Mpa-vz-TRj" secondAttribute="leading" constant="10" id="VqZ-uz-TYS"/>
+                            <constraint firstItem="Bix-Lw-fgq" firstAttribute="trailing" secondItem="yt3-k9-Br7" secondAttribute="trailing" constant="-50" id="Xb3-IK-bht"/>
+                            <constraint firstItem="Bix-Lw-fgq" firstAttribute="leading" secondItem="yt3-k9-Br7" secondAttribute="leading" constant="50" id="Ybi-BY-rYP"/>
                             <constraint firstItem="tCn-Mn-EJg" firstAttribute="bottom" secondItem="yt3-k9-Br7" secondAttribute="bottom" id="bM4-mO-4Kp"/>
                             <constraint firstItem="m3l-f6-C0B" firstAttribute="top" secondItem="Bix-Lw-fgq" secondAttribute="bottom" constant="20" id="brj-Zv-ma5"/>
                             <constraint firstItem="tCn-Mn-EJg" firstAttribute="leading" secondItem="yt3-k9-Br7" secondAttribute="leading" id="itm-fC-Awa"/>
@@ -155,6 +186,7 @@
                     <connections>
                         <outlet property="albumNameLabel" destination="m3l-f6-C0B" id="B7B-yC-udi"/>
                         <outlet property="artistNameLabel" destination="WM6-OY-gbE" id="ZoU-Zd-dy1"/>
+                        <outlet property="heartButton" destination="eKi-t1-87O" id="0R9-RM-8wR"/>
                         <outlet property="imageView" destination="Bix-Lw-fgq" id="FBI-Dm-4yY"/>
                         <outlet property="tableView" destination="tCn-Mn-EJg" id="IZ9-tB-cTg"/>
                     </connections>
@@ -164,4 +196,8 @@
             <point key="canvasLocation" x="935.625" y="105.63380281690141"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="closeButton" width="360" height="360"/>
+        <image name="heartEmpty" width="75" height="75"/>
+    </resources>
 </document>

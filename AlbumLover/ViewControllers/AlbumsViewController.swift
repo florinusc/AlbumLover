@@ -33,7 +33,7 @@ class AlbumsViewController: UIViewController {
         viewModel?.getAlbums(completion: { [weak self] error in
             guard let strongSelf = self else { return }
             guard error == nil else {
-                strongSelf.presentAlert(with: "Error", message: error?.localizedDescription ?? "Something went wrong")
+                strongSelf.presentAlert(with: "Error", message: error!.localizedDescription)
                 return
             }
             strongSelf.collectionView.reloadData()
@@ -60,7 +60,8 @@ class AlbumsViewController: UIViewController {
         let albumDetailViewModel = AlbumDetailViewModel(with: albumID)
         let albumDetailViewController = AlbumDetailViewController.getInstance()
         albumDetailViewController.viewModel = albumDetailViewModel
-        navigationController?.pushViewController(albumDetailViewController, animated: true)
+//        navigationController?.pushViewController(albumDetailViewController, animated: true)
+        navigationController?.present(albumDetailViewController, animated: true, completion: nil)
     }
 }
 

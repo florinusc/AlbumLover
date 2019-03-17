@@ -9,8 +9,8 @@
 import Foundation
 
 class SearchViewModel {
-    var artists = [Artist]()
-    var repository: Repository!
+    private var artists = [Artist]()
+    private var repository: Repository!
 
     init(with repository: Repository = OfflineRepository()) {
         self.repository = repository
