@@ -12,4 +12,5 @@ struct Album {
     var name: String
     var artist: String
     var imageURL: String
+    var id: String
 }

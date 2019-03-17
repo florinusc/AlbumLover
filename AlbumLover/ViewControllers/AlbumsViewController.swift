@@ -19,9 +19,9 @@ class AlbumsViewController: UIViewController {
 
     var viewModel: AlbumsViewModel!
 
-    let cellAspectRatio: CGFloat = 1.45
-    let numberOfCellsPerRow: CGFloat = 2.0
-    let cellPadding: CGFloat = 30.0
+    private let cellAspectRatio: CGFloat = 1.45
+    private let numberOfCellsPerRow: CGFloat = 2.0
+    private let cellPadding: CGFloat = 30.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +54,14 @@ class AlbumsViewController: UIViewController {
         searchViewController.viewModel = searchViewModel
         navigationController?.pushViewController(searchViewController, animated: true)
     }
+
+    private func goToAlbumDetail(with indexPath: IndexPath) {
+        guard let albumID = viewModel.albumID(at: indexPath) else { return }
+        let albumDetailViewModel = AlbumDetailViewModel(with: albumID)
+        let albumDetailViewController = AlbumDetailViewController.getInstance()
+        albumDetailViewController.viewModel = albumDetailViewModel
+        navigationController?.pushViewController(albumDetailViewController, animated: true)
+    }
 }
 
 extension AlbumsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -67,6 +75,10 @@ extension AlbumsViewController: UICollectionViewDelegate, UICollectionViewDataSo
             cell.configure(with: albumViewModel)
         }
         return cell
+    }
+
+    func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        goToAlbumDetail(with: indexPath)
     }
 }
 

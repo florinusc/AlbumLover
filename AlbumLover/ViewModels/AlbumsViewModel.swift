@@ -44,6 +44,12 @@ class AlbumsViewModel {
         return AlbumViewModel(with: album)
     }
 
+    func albumID(at indexPath: IndexPath) -> String? {
+        guard indexPath.item < albums.count else { return nil }
+        let album = albums[indexPath.item]
+        return album.id
+    }
+
     func getTitle() -> String {
         if let artist = artist {
             return artist.name
