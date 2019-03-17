@@ -50,10 +50,8 @@ class AlbumDetailViewController: UIViewController {
     @IBAction private func onCloseButtonTapped(_: UIButton) {
         dismiss(animated: true, completion: nil)
     }
-    
-    @IBAction private func onHeartButtonTapped(_ sender: UIButton) {
-        
-    }
+
+    @IBAction private func onHeartButtonTapped(_: UIButton) {}
 }
 
 extension AlbumDetailViewController: UITableViewDelegate, UITableViewDataSource {
