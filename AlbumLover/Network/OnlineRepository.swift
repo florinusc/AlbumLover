@@ -9,8 +9,7 @@
 import Foundation
 
 class OnlineRepository: Repository {
-    func getAlbums(completion _: @escaping ([Album]?, Error?) -> Void) {}
+    func getAlbums(with artistID: String?, completion _: @escaping ([Album]?, Error?) -> Void) {}
     func getArtists(with _: String, completion _: @escaping ([Artist]?, Error?) -> Void) {}
-    func getAlbums(by _: String, completion _: @escaping ([Album]?, Error?) -> Void) {}
     func getAlbumDetails(with _: String, by _: String, completion _: @escaping (AlbumDetail?, Error?) -> Void) {}
 }
