@@ -50,7 +50,7 @@ class SearchViewController: UIViewController {
     private func goToAlbumsByArtist(at indexPath: IndexPath) {
         let artist = viewModel.artist(at: indexPath)
         let albumsViewController = AlbumsViewController.getInstance()
-        let albumsViewModel = AlbumsViewModel(artist: artist)
+        let albumsViewModel = AlbumsViewModel(with: OnlineRepository(), artist: artist)
         albumsViewController.viewModel = albumsViewModel
         navigationController?.pushViewController(albumsViewController, animated: true)
     }

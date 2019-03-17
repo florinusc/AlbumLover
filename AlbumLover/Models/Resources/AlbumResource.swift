@@ -21,3 +21,11 @@ struct AlbumResource: Codable {
         case images = "image"
     }
 }
+
+struct AlbumResources: Codable {
+    var topalbums: TopAlbums
+    
+    struct TopAlbums: Codable {
+        var album: [AlbumResource]
+    }
+}

@@ -13,4 +13,11 @@ struct Album {
     var artist: String
     var imageURL: String
     var id: String
+
+    static func from(_ albumResource: AlbumResource) -> Album {
+        return Album(name: albumResource.name,
+                     artist: albumResource.artist.name,
+                     imageURL: albumResource.images.first?.stringURL ?? "",
+                     id: albumResource.id)
+    }
 }
