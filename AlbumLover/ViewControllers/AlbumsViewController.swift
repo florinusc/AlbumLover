@@ -19,6 +19,10 @@ class AlbumsViewController: UIViewController {
 
     var viewModel: AlbumsViewModel!
 
+    let cellAspectRatio: CGFloat = 1.45
+    let numberOfCellsPerRow: CGFloat = 2.0
+    let cellPadding: CGFloat = 30.0
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -67,9 +71,9 @@ extension AlbumsViewController: UICollectionViewDelegate, UICollectionViewDataSo
 }
 
 extension AlbumsViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt _: IndexPath) -> CGSize {
-        let width = (collectionView.frame.width - 30.0) / 2.0
-        let height = width * 1.5
+    func collectionView(_ collectionView: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (collectionView.frame.width - cellPadding) / numberOfCellsPerRow
+        let height = width * cellAspectRatio
         return CGSize(width: width, height: height)
     }
 }
