@@ -19,7 +19,7 @@ class AlbumsViewModel {
     }
 
     func getAlbums(completion block: @escaping (Error?) -> Void) {
-        repository?.getAlbums(with: artist?.name, completion: { [weak self] albums, error in
+        repository?.getAlbums(with: artist?.id, completion: { [weak self] albums, error in
             guard error == nil else {
                 block(error!)
                 return

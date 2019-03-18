@@ -10,12 +10,12 @@ import Foundation
 
 class OnlineRepository: Repository {
     func getAlbums(with artistID: String?, completion block: @escaping ([Album]?, Error?) -> Void) {
-        SessionManager.getResources(type: AlbumResource.self, requestType: .albums(artistID: artistID)) { albums, error in
+        SessionManager.getResources(type: AlbumResources.self, requestType: .albums(artistID: artistID)) { albumResources, error in
             guard error == nil else {
                 block(nil, error!)
                 return
             }
-            block(albums?.compactMap({ Album.from($0) }), nil)
+            block(albumResources?.topalbums.album.compactMap({ Album.from($0) }), nil)
         }
     }
 

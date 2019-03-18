@@ -9,7 +9,7 @@
 import Foundation
 
 struct AlbumResource: Codable {
-    var id: String
+    var id: String?
     var name: String
     var artist: ArtistResource
     var images: [ImageResource]
@@ -24,7 +24,7 @@ struct AlbumResource: Codable {
 
 struct AlbumResources: Codable {
     var topalbums: TopAlbums
-    
+
     struct TopAlbums: Codable {
         var album: [AlbumResource]
     }

@@ -17,7 +17,7 @@ class SessionManager {
         return Alamofire.SessionManager(configuration: configuration)
     }()
 
-    static func getResources<T: Codable>(type _: T.Type, requestType: RequestType, completion block: @escaping ([T]?, Error?) -> Void) {
+    static func getResources<T: Codable>(type _: T.Type, requestType: RequestType, completion block: @escaping (T?, Error?) -> Void) {
         guard let url = requestType.url else {
             block(nil, CustomError.invalidURLError)
             return
@@ -35,10 +35,16 @@ class SessionManager {
                     }
                     if statusCode < 400 {
                         do {
-                            let resources = try JSONDecoder().decode([T].self, from: data)
+                            let resources = try JSONDecoder().decode(T.self, from: data)
                             block(resources, nil)
                         } catch let error {
-                            block(nil, error)
+                            print(error)
+                            do {
+                                let error = try JSONDecoder().decode(JSONError.self, from: data)
+                                block(nil, error)
+                            } catch {
+                                block(nil, error)
+                            }
                         }
                     } else {
                         do {

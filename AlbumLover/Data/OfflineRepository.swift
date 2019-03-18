@@ -22,7 +22,7 @@ class OfflineRepository: Repository {
     }
 
     func getArtists(with _: String, completion block: @escaping ([Artist]?, Error?) -> Void) {
-        block([Artist(id: "", name: "Cher")], nil)
+        block([Artist(id: "bfcc6d75-a6a5-4bc6-8282-47aec8531818", name: "Cher")], nil)
     }
 
     func getAlbumDetails(with _: String, completion block: @escaping (AlbumDetail?, Error?) -> Void) {
