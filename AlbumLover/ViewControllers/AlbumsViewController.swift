@@ -56,11 +56,11 @@ class AlbumsViewController: UIViewController {
     }
 
     private func goToAlbumDetail(with indexPath: IndexPath) {
-        guard let albumID = viewModel.albumID(at: indexPath) else { return }
-        let albumDetailViewModel = AlbumDetailViewModel(with: albumID)
+        guard let albumName = viewModel.getAlbumName(at: indexPath),
+            let artistName = viewModel.getArtistName(at: indexPath) else { return }
+        let albumDetailViewModel = AlbumDetailViewModel(with: albumName, artistName, repository: OnlineRepository())
         let albumDetailViewController = AlbumDetailViewController.getInstance()
         albumDetailViewController.viewModel = albumDetailViewModel
-//        navigationController?.pushViewController(albumDetailViewController, animated: true)
         navigationController?.present(albumDetailViewController, animated: true, completion: nil)
     }
 }

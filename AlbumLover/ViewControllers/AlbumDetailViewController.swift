@@ -40,8 +40,8 @@ class AlbumDetailViewController: UIViewController {
     }
 
     private func loadDetails() {
-        albumNameLabel.text = viewModel.albumName()
-        artistNameLabel.text = viewModel.artistName()
+        albumNameLabel.text = viewModel.getAlbumName()
+        artistNameLabel.text = viewModel.getArtistName()
         tableView.reloadData()
         guard let imageURL = viewModel.imageURL() else { return }
         imageView.setImage(with: imageURL)
@@ -61,7 +61,7 @@ extension AlbumDetailViewController: UITableViewDelegate, UITableViewDataSource 
 
     func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.detailTextLabel?.text = viewModel.trackDetails(at: indexPath)
+        cell.textLabel?.text = viewModel.trackDetails(at: indexPath)
         return cell
     }
 }

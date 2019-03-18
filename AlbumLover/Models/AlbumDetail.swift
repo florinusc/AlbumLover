@@ -11,12 +11,13 @@ import Foundation
 struct AlbumDetail {
     var name: String
     var artist: String
-    var id: String
     var imageURLs: [String]
     var tracks: [Track]
-}
 
-struct Track {
-    var name: String
-    var duration: String
+    static func from(_ albumDetailResource: AlbumDetailResource) -> AlbumDetail {
+        return AlbumDetail(name: albumDetailResource.name,
+                           artist: albumDetailResource.name,
+                           imageURLs: albumDetailResource.image.compactMap({ $0.stringURL }),
+                           tracks: albumDetailResource.tracks.track.compactMap({ Track.from($0) }))
+    }
 }

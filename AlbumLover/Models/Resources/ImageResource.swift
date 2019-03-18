@@ -10,17 +10,10 @@ import Foundation
 
 struct ImageResource: Codable {
     var stringURL: String
-    var size: ImageSize
+    var size: String
 
     enum CodingKeys: String, CodingKey {
         case stringURL = "#text"
         case size
-    }
-
-    enum ImageSize: String, Codable {
-        case small
-        case medium
-        case large
-        case extralarge
     }
 }

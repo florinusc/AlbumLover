@@ -9,17 +9,19 @@
 import Foundation
 
 class AlbumDetailViewModel {
-    private var albumID: String!
+    private var albumName: String!
+    private var artistName: String!
     private var repository: Repository!
     private var albumDetails: AlbumDetail?
 
-    init(with albumID: String, repository: Repository = OfflineRepository()) {
-        self.albumID = albumID
+    init(with albumName: String, _ artistName: String, repository: Repository = OfflineRepository()) {
+        self.albumName = albumName
+        self.artistName = artistName
         self.repository = repository
     }
 
     func getAlbumDetails(completion block: @escaping (Error?) -> Void) {
-        repository.getAlbumDetails(with: albumID) { [weak self] albumDetails, error in
+        repository.getAlbumDetails(with: albumName, artistName: artistName) { [weak self] albumDetails, error in
             guard error == nil else {
                 block(error!)
                 return
@@ -34,19 +36,19 @@ class AlbumDetailViewModel {
         }
     }
 
-    func albumName() -> String {
+    func getAlbumName() -> String {
         guard let albumDetails = albumDetails else { return "" }
         return albumDetails.name
     }
 
-    func artistName() -> String {
+    func getArtistName() -> String {
         guard let albumDetails = albumDetails else { return "" }
         return albumDetails.artist
     }
 
     func imageURL() -> URL? {
         guard let albumDetails = albumDetails else { return nil }
-        guard let firstImage = albumDetails.imageURLs.first else { return nil }
+        guard let firstImage = albumDetails.imageURLs.last else { return nil }
         return URL(string: firstImage)
     }
 

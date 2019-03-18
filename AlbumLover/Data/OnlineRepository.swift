@@ -29,5 +29,17 @@ class OnlineRepository: Repository {
         }
     }
 
-    func getAlbumDetails(with albumID: String, completion _: @escaping (AlbumDetail?, Error?) -> Void) {}
+    func getAlbumDetails(with albumName: String, artistName: String, completion block: @escaping (AlbumDetail?, Error?) -> Void) {
+        SessionManager.getResources(type: AlbumDetailResource.self, requestType: .albumDetails(albumName: albumName, artistName: artistName)) { albumResource, error in
+            guard error == nil else {
+                block(nil, error)
+                return
+            }
+            guard let album = albumResource else {
+                block(nil, CustomError.generalError)
+                return
+            }
+            block(AlbumDetail.from(album), nil)
+        }
+    }
 }
