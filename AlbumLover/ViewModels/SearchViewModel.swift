@@ -12,7 +12,7 @@ class SearchViewModel {
     private var artists = [Artist]()
     private var repository: Repository!
 
-    init(with repository: Repository = OfflineRepository()) {
+    init(with repository: Repository = OnlineRepository()) {
         self.repository = repository
     }
 

@@ -17,3 +17,15 @@ struct ArtistResource: Codable {
         case name
     }
 }
+
+struct ArtistResources: Codable {
+    var results: Results
+
+    struct Results: Codable {
+        var artistmatches: Matches
+    }
+
+    struct Matches: Codable {
+        var artist: [ArtistResource]
+    }
+}

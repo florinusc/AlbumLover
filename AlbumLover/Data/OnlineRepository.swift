@@ -19,6 +19,15 @@ class OnlineRepository: Repository {
         }
     }
 
-    func getArtists(with _: String, completion _: @escaping ([Artist]?, Error?) -> Void) {}
+    func getArtists(with name: String, completion block: @escaping ([Artist]?, Error?) -> Void) {
+        SessionManager.getResources(type: ArtistResources.self, requestType: .artists(name: name)) { artistResources, error in
+            guard error == nil else {
+                block(nil, error!)
+                return
+            }
+            block(artistResources?.results.artistmatches.artist.compactMap({ Artist.from($0) }), nil)
+        }
+    }
+
     func getAlbumDetails(with albumID: String, completion _: @escaping (AlbumDetail?, Error?) -> Void) {}
 }

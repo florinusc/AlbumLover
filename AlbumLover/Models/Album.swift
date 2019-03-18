@@ -17,7 +17,7 @@ struct Album {
     static func from(_ albumResource: AlbumResource) -> Album {
         return Album(name: albumResource.name,
                      artist: albumResource.artist.name,
-                     imageURL: albumResource.images.first(where: {$0.size == .large})?.stringURL ?? "",
+                     imageURL: albumResource.images.first(where: { $0.size == .large })?.stringURL ?? "",
                      id: albumResource.id ?? "")
     }
 }

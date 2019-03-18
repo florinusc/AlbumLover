@@ -11,4 +11,8 @@ import Foundation
 struct Artist {
     var id: String
     var name: String
+
+    static func from(_ artistResource: ArtistResource) -> Artist {
+        return Artist(id: artistResource.id, name: artistResource.name)
+    }
 }

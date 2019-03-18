@@ -10,6 +10,7 @@ import Foundation
 
 enum RequestType {
     case albums(artistID: String?)
+    case artists(name: String)
 
     var url: URL? {
         var components = URLComponents()
@@ -24,6 +25,9 @@ enum RequestType {
             if let artistID = artistID {
                 components.queryItems?.append(URLQueryItem(name: "mbid", value: artistID))
             }
+        case let .artists(name):
+            components.queryItems?.append(URLQueryItem(name: "method", value: "artist.search"))
+            components.queryItems?.append(URLQueryItem(name: "artist", value: name))
         }
         return components.url
     }
