@@ -48,8 +48,7 @@ class AlbumDetailViewModel {
 
     func imageURL() -> URL? {
         guard let albumDetails = albumDetails else { return nil }
-        guard let firstImage = albumDetails.imageURLs.last else { return nil }
-        return URL(string: firstImage)
+        return URL(string: albumDetails.imageURL)
     }
 
     func numberOfTracks() -> Int {
@@ -62,5 +61,12 @@ class AlbumDetailViewModel {
             indexPath.row < albumDetails.tracks.count else { return "" }
         let track = albumDetails.tracks[indexPath.row]
         return "\(track.duration) - \(track.name)"
+    }
+
+    func addAlbumLocally(completion block: @escaping (Error?) -> Void) {
+        guard let albumDetail = albumDetails else { return }
+        repository.addAlbum(albumDetail: albumDetail) { error in
+            block(error)
+        }
     }
 }

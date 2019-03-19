@@ -13,6 +13,6 @@ struct Track {
     var duration: String
 
     static func from(_ trackResource: TrackResource) -> Track {
-        return Track(name: trackResource.name, duration: trackResource.duration)
+        return Track(name: trackResource.name, duration: trackResource.duration.fromSecondsToDuration())
     }
 }

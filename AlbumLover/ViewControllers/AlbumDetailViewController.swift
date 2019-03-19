@@ -51,7 +51,15 @@ class AlbumDetailViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
-    @IBAction private func onHeartButtonTapped(_: UIButton) {}
+    @IBAction private func onHeartButtonTapped(_: UIButton) {
+        viewModel.addAlbumLocally { [weak self] error in
+            guard let strongSelf = self else { return }
+            guard error == nil else {
+                strongSelf.presentAlert(with: "Error", message: error!.localizedDescription)
+                return
+            }
+        }
+    }
 }
 
 extension AlbumDetailViewController: UITableViewDelegate, UITableViewDataSource {

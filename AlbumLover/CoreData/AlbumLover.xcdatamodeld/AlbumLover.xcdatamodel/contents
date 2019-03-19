@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AlbumDataObject" representedClassName="AlbumDataObject" syncable="YES" codeGenerationType="class">
+        <attribute name="albumID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="artist" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="tracks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TrackDataObject" inverseName="album" inverseEntity="TrackDataObject" syncable="YES"/>
+    </entity>
+    <entity name="TrackDataObject" representedClassName="TrackDataObject" syncable="YES" codeGenerationType="class">
+        <attribute name="duration" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="album" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AlbumDataObject" inverseName="tracks" inverseEntity="AlbumDataObject" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AlbumDataObject" positionX="-200.55859375" positionY="-67.39453125" width="128" height="118"/>
+        <element name="TrackDataObject" positionX="88.38671875" positionY="36.53515625" width="128" height="88"/>
+    </elements>
+</model>

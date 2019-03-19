@@ -42,4 +42,16 @@ class OnlineRepository: Repository {
             block(AlbumDetail.from(album), nil)
         }
     }
+
+    func addAlbum(albumDetail: AlbumDetail, completion block: @escaping (Error?) -> Void) {
+        CoreDataManager.addAlbum(with: albumDetail) { error in
+            block(error)
+        }
+    }
+
+    func removeAlbum(albumDetail: AlbumDetail, completion block: @escaping (Error?) -> Void) {
+        CoreDataManager.removeAlbum(with: albumDetail) { error in
+            block(error)
+        }
+    }
 }
