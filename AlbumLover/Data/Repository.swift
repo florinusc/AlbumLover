@@ -17,11 +17,19 @@ protocol Repository {
 }
 
 extension Repository {
-    func addAlbum(albumDetail _: AlbumDetail, completion block: @escaping (Error?) -> Void) {
-        block(CustomError.generalError)
+    func getArtists(with _: String, completion block: @escaping ([Artist]?, Error?) -> Void) {
+        block(nil, CustomError.generalError)
     }
 
-    func removeAlbum(albumDetail _: AlbumDetail, completion block: @escaping (Error?) -> Void) {
-        block(CustomError.generalError)
+    func addAlbum(albumDetail: AlbumDetail, completion block: @escaping (Error?) -> Void) {
+        CoreDataManager.addAlbum(with: albumDetail) { error in
+            block(error)
+        }
+    }
+
+    func removeAlbum(albumDetail: AlbumDetail, completion block: @escaping (Error?) -> Void) {
+        CoreDataManager.removeAlbum(with: albumDetail) { error in
+            block(error)
+        }
     }
 }

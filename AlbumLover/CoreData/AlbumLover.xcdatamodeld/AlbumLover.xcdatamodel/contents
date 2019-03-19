@@ -7,6 +7,10 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="tracks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TrackDataObject" inverseName="album" inverseEntity="TrackDataObject" syncable="YES"/>
     </entity>
+    <entity name="ImageDataObject" representedClassName="ImageDataObject" syncable="YES" codeGenerationType="class">
+        <attribute name="high" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="normal" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="TrackDataObject" representedClassName="TrackDataObject" syncable="YES" codeGenerationType="class">
         <attribute name="duration" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -15,5 +19,6 @@
     <elements>
         <element name="AlbumDataObject" positionX="-200.55859375" positionY="-67.39453125" width="128" height="118"/>
         <element name="TrackDataObject" positionX="88.38671875" positionY="36.53515625" width="128" height="88"/>
+        <element name="ImageDataObject" positionX="-27" positionY="45" width="128" height="75"/>
     </elements>
 </model>

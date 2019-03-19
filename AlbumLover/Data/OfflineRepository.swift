@@ -15,10 +15,6 @@ class OfflineRepository: Repository {
         }
     }
 
-    func getArtists(with _: String, completion block: @escaping ([Artist]?, Error?) -> Void) {
-        block([Artist(id: "bfcc6d75-a6a5-4bc6-8282-47aec8531818", name: "Cher")], nil)
-    }
-
     func getAlbumDetails(with _: String, artistName _: String, completion block: @escaping (AlbumDetail?, Error?) -> Void) {
         let track = Track(name: "The Power", duration: "423")
         let albumDetail = AlbumDetail(name: "Believe", artist: "Cher", imageURL: "https://lastfm-img2.akamaized.net/i/u/300x300/3b54885952161aaea4ce2965b2db1638.png", tracks: [track])
