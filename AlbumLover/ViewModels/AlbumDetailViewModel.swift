@@ -69,4 +69,18 @@ class AlbumDetailViewModel {
             block(error)
         }
     }
+
+    func isAlbumSaved(completion block: @escaping (Bool) -> Void) {
+        guard let albumDetail = albumDetails else {
+            block(false)
+            return
+        }
+        repository.checkAlbum(albumDetail: albumDetail) { result, error in
+            guard error == nil, let result = result else {
+                block(false)
+                return
+            }
+            block(result)
+        }
+    }
 }

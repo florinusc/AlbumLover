@@ -10,10 +10,12 @@ import CoreData
 import UIKit
 
 class CoreDataManager {
-    static func addAlbum(with albumDetail: AlbumDetail, completion block: @escaping (Error?) -> Void) {
+    private static let context: NSManagedObjectContext = {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
+        return appDelegate.persistentContainer.viewContext
+    }()
 
+    static func addAlbum(with albumDetail: AlbumDetail, completion block: @escaping (Error?) -> Void) {
         let album = AlbumDataObject(context: context)
 
         album.name = albumDetail.name
@@ -38,9 +40,6 @@ class CoreDataManager {
     }
 
     static func removeAlbum(with albumDetail: AlbumDetail, completion block: @escaping (Error?) -> Void) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "AlbumDataObject")
         request.predicate = NSPredicate(format: "name = %@", albumDetail.name)
 
@@ -55,10 +54,20 @@ class CoreDataManager {
         }
     }
 
-    static func getAlbums(completion block: @escaping ([Album]?, Error?) -> Void) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
+    static func checkAlbum(with albumDetail: AlbumDetail, completion block: @escaping (Bool?, Error?) -> Void) {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "AlbumDataObject")
+        request.predicate = NSPredicate(format: "name = %@", albumDetail.name)
 
+        do {
+            let objects = try context.fetch(request)
+            block(objects.count > 0, nil)
+        } catch {
+            print("Failed to retrieve from Core Data")
+            block(nil, CustomError.coreDataRetrieveError)
+        }
+    }
+
+    static func getAlbums(completion block: @escaping ([Album]?, Error?) -> Void) {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "AlbumDataObject")
 
         do {

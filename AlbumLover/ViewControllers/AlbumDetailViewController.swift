@@ -45,6 +45,14 @@ class AlbumDetailViewController: UIViewController {
         tableView.reloadData()
         guard let imageURL = viewModel.imageURL() else { return }
         imageView.setImage(with: imageURL)
+        checkIfAlbumIsSaved()
+    }
+
+    private func checkIfAlbumIsSaved() {
+        viewModel.isAlbumSaved { [weak self] saved in
+            guard let strongSelf = self else { return }
+            if saved { strongSelf.heartButton.setImage(UIImage(named: "heartFull"), for: .normal) }
+        }
     }
 
     @IBAction private func onCloseButtonTapped(_: UIButton) {
