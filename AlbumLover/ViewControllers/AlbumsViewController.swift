@@ -23,8 +23,8 @@ class AlbumsViewController: UIViewController {
     private let numberOfCellsPerRow: CGFloat = 2.0
     private let cellPadding: CGFloat = 30.0
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setup()
     }
 

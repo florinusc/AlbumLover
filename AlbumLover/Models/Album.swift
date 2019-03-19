@@ -24,7 +24,7 @@ struct Album {
     static func from(_ albumDataObject: AlbumDataObject) -> Album {
         return Album(name: albumDataObject.name ?? "",
                      artist: albumDataObject.artist ?? "",
-                     imageURL: albumDataObject.imageURL ?? "",
+                     imageURL: albumDataObject.normalImageURL ?? "",
                      id: albumDataObject.albumID ?? "")
     }
 }

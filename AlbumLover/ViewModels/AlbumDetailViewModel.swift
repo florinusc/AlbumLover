@@ -48,7 +48,7 @@ class AlbumDetailViewModel {
 
     func imageURL() -> URL? {
         guard let albumDetails = albumDetails else { return nil }
-        return URL(string: albumDetails.imageURL)
+        return URL(string: albumDetails.highImageURL)
     }
 
     func numberOfTracks() -> Int {

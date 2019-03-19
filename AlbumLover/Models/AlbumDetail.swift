@@ -11,13 +11,15 @@ import Foundation
 struct AlbumDetail {
     var name: String
     var artist: String
-    var imageURL: String
+    var normalImageURL: String
+    var highImageURL: String
     var tracks: [Track]
 
     static func from(_ albumDetailResource: AlbumDetailResource) -> AlbumDetail {
         return AlbumDetail(name: albumDetailResource.name,
                            artist: albumDetailResource.artist,
-                           imageURL: albumDetailResource.image.last?.stringURL ?? "",
+                           normalImageURL: albumDetailResource.image.first(where: { $0.size == "large" })?.stringURL ?? "",
+                           highImageURL: albumDetailResource.image.first(where: { $0.size == "extralarge" })?.stringURL ?? "",
                            tracks: albumDetailResource.tracks.track.compactMap({ Track.from($0) }))
     }
 }

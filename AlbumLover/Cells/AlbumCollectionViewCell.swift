@@ -19,4 +19,11 @@ class AlbumCollectionViewCell: UICollectionViewCell {
         guard let url = URL(string: albumViewModel.imageURL) else { return }
         imageView.setImage(with: url)
     }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        nameLabel.text = ""
+        artistLabel.text = ""
+        imageView.image = nil
+    }
 }

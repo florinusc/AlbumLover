@@ -18,7 +18,8 @@ class CoreDataManager {
 
         album.name = albumDetail.name
         album.artist = albumDetail.artist
-        album.imageURL = albumDetail.imageURL
+        album.normalImageURL = albumDetail.normalImageURL
+        album.highImageURL = albumDetail.highImageURL
 
         albumDetail.tracks.forEach {
             let track = TrackDataObject(context: context)
