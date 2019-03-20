@@ -37,6 +37,7 @@ class AlbumDetailViewController: UIViewController {
             }
             strongSelf.loadDetails()
         }
+        viewModel.saveButtonUpdateHandler = updateSaveButton
     }
 
     private func loadDetails() {
@@ -45,21 +46,9 @@ class AlbumDetailViewController: UIViewController {
         tableView.reloadData()
         guard let imageURL = viewModel.imageURL() else { return }
         imageView.setImage(with: imageURL)
-        checkIfAlbumIsSaved()
     }
 
-    private func checkIfAlbumIsSaved() {
-        viewModel.isAlbumSaved { [weak self] saved in
-            guard let strongSelf = self else { return }
-            if saved { strongSelf.heartButton.setImage(UIImage(named: "heartFull"), for: .normal) }
-        }
-    }
-
-    @IBAction private func onCloseButtonTapped(_: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
-
-    @IBAction private func onHeartButtonTapped(_: UIButton) {
+    private func saveAlbum() {
         viewModel.addAlbumLocally { [weak self] error in
             guard let strongSelf = self else { return }
             guard error == nil else {
@@ -67,6 +56,28 @@ class AlbumDetailViewController: UIViewController {
                 return
             }
         }
+    }
+
+    private func removeAlbum() {
+        viewModel.removeAlbumFromLocalStorage { [weak self] error in
+            guard let strongSelf = self else { return }
+            guard error == nil else {
+                strongSelf.presentAlert(with: "Error", message: error!.localizedDescription)
+                return
+            }
+        }
+    }
+
+    private func updateSaveButton(saved: Bool) {
+        heartButton.setImage(UIImage(named: saved ? "heartFull" : "heartEmpty"), for: .normal)
+    }
+
+    @IBAction private func onCloseButtonTapped(_: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+
+    @IBAction private func onHeartButtonTapped(_: UIButton) {
+        viewModel.isAlbumSaved() ? removeAlbum() : saveAlbum()
     }
 }
 

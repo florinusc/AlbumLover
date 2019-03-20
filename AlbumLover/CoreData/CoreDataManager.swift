@@ -48,6 +48,7 @@ class CoreDataManager {
             let objectToDelete = objects.first as! NSManagedObject
             context.delete(objectToDelete)
             try context.save()
+            block(nil)
         } catch {
             print("Failed to remove from Core Data")
             block(CustomError.coreDataRemoveError)

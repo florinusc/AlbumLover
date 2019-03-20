@@ -13,6 +13,11 @@ class AlbumDetailViewModel {
     private var artistName: String!
     private var repository: Repository!
     private var albumDetails: AlbumDetail?
+    private var isSaved: Bool! {
+        didSet { saveButtonUpdateHandler(isSaved) }
+    }
+
+    var saveButtonUpdateHandler: (Bool) -> Void = { _ in }
 
     init(with albumName: String, _ artistName: String, repository: Repository = OfflineRepository()) {
         self.albumName = albumName
@@ -32,6 +37,7 @@ class AlbumDetailViewModel {
                 return
             }
             strongSelf.albumDetails = albumDetails
+            strongSelf.checkIfAlbumIsSaved()
             block(nil)
         }
     }
@@ -65,22 +71,38 @@ class AlbumDetailViewModel {
 
     func addAlbumLocally(completion block: @escaping (Error?) -> Void) {
         guard let albumDetail = albumDetails else { return }
-        repository.addAlbum(albumDetail: albumDetail) { error in
+        repository.addAlbum(albumDetail: albumDetail) { [weak self] error in
+            if error == nil, let strongSelf = self {
+                strongSelf.isSaved = true
+            }
             block(error)
         }
     }
 
-    func isAlbumSaved(completion block: @escaping (Bool) -> Void) {
-        guard let albumDetail = albumDetails else {
-            block(false)
-            return
+    func removeAlbumFromLocalStorage(completion block: @escaping (Error?) -> Void) {
+        guard let albumDetail = albumDetails else { return }
+        repository.removeAlbum(albumDetail: albumDetail) { [weak self] error in
+            if error == nil, let strongSelf = self {
+                strongSelf.isSaved = false
+            }
+            block(error)
         }
-        repository.checkAlbum(albumDetail: albumDetail) { result, error in
-            guard error == nil, let result = result else {
-                block(false)
+    }
+
+    func checkIfAlbumIsSaved() {
+        guard isSaved == nil else { return }
+        guard let albumDetail = albumDetails else { return }
+        repository.checkAlbum(albumDetail: albumDetail) { [weak self] result, error in
+            guard error == nil,
+                let result = result,
+                let strongSelf = self else {
                 return
             }
-            block(result)
+            strongSelf.isSaved = result
         }
+    }
+
+    func isAlbumSaved() -> Bool {
+        return isSaved
     }
 }
