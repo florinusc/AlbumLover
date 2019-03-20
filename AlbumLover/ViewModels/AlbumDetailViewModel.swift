@@ -41,6 +41,19 @@ class AlbumDetailViewModel {
             block(nil)
         }
     }
+    
+    private func checkIfAlbumIsSaved() {
+        guard isSaved == nil else { return }
+        guard let albumDetail = albumDetails else { return }
+        repository.checkAlbum(albumDetail: albumDetail) { [weak self] result, error in
+            guard error == nil,
+                let result = result,
+                let strongSelf = self else {
+                    return
+            }
+            strongSelf.isSaved = result
+        }
+    }
 
     func getAlbumName() -> String {
         guard let albumDetails = albumDetails else { return "" }
@@ -86,19 +99,6 @@ class AlbumDetailViewModel {
                 strongSelf.isSaved = false
             }
             block(error)
-        }
-    }
-
-    func checkIfAlbumIsSaved() {
-        guard isSaved == nil else { return }
-        guard let albumDetail = albumDetails else { return }
-        repository.checkAlbum(albumDetail: albumDetail) { [weak self] result, error in
-            guard error == nil,
-                let result = result,
-                let strongSelf = self else {
-                return
-            }
-            strongSelf.isSaved = result
         }
     }
 
