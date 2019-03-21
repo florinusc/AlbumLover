@@ -11,7 +11,10 @@ import UIKit
 extension UIViewController {
     func presentAlert(with title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        okAction.setValue(UIColor.black, forKey: "titleTextColor")
+        alert.addAction(okAction)
+
         present(alert, animated: true, completion: nil)
     }
 }

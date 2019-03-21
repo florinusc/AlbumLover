@@ -10,6 +10,7 @@ target 'AlbumLover' do
   pod 'SwiftFormat/CLI'
   pod 'Alamofire', '4.8'
   pod 'AlamofireImage', '3.5'
+  pod 'DZNEmptyDataSet'
 
   target 'AlbumLoverTests' do
     inherit! :search_paths

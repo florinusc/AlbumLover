@@ -44,8 +44,12 @@ class AlbumDetailViewController: UIViewController {
         albumNameLabel.text = viewModel.getAlbumName()
         artistNameLabel.text = viewModel.getArtistName()
         tableView.reloadData()
-        guard let imageURL = viewModel.imageURL() else { return }
-        imageView.setImage(with: imageURL)
+        guard let placeholderImage = UIImage(named: "albumPlaceholder") else { return }
+        guard let imageURL = viewModel.imageURL() else {
+            imageView.image = placeholderImage
+            return
+        }
+        imageView.setImage(with: imageURL, placeholder: placeholderImage)
     }
 
     private func saveAlbum() {

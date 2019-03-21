@@ -34,6 +34,7 @@ class SearchViewController: UIViewController {
     private func setup() {
         title = "Search"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        searchBar.becomeFirstResponder()
     }
 
     private func filterContentForSearchText(text: String) {

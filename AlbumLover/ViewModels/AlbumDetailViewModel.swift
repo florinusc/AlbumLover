@@ -41,7 +41,7 @@ class AlbumDetailViewModel {
             block(nil)
         }
     }
-    
+
     private func checkIfAlbumIsSaved() {
         guard isSaved == nil else { return }
         guard let albumDetail = albumDetails else { return }
@@ -49,7 +49,7 @@ class AlbumDetailViewModel {
             guard error == nil,
                 let result = result,
                 let strongSelf = self else {
-                    return
+                return
             }
             strongSelf.isSaved = result
         }

@@ -2,24 +2,28 @@ PODS:
   - Alamofire (4.8.0)
   - AlamofireImage (3.5.0):
     - Alamofire (~> 4.8)
+  - DZNEmptyDataSet (1.8.1)
   - SwiftFormat/CLI (0.36.0)
 
 DEPENDENCIES:
   - Alamofire (= 4.8)
   - AlamofireImage (= 3.5)
+  - DZNEmptyDataSet
   - SwiftFormat/CLI
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireImage
+    - DZNEmptyDataSet
     - SwiftFormat
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   SwiftFormat: 25f67a6f1b0b18dfd0567d48e8e9a7871b1f2e44
 
-PODFILE CHECKSUM: a1838238881a2e4a925c04b4e328c1368f6a79e8
+PODFILE CHECKSUM: 59fd400ca16a894e82a4c0f01a473f1265f3be55
 
 COCOAPODS: 1.5.3

@@ -6,6 +6,7 @@
 //  Copyright © 2019 Florin Uscatu. All rights reserved.
 //
 
+import DZNEmptyDataSet
 import UIKit
 
 class AlbumsViewController: UIViewController {
@@ -13,6 +14,8 @@ class AlbumsViewController: UIViewController {
         didSet {
             collectionView.delegate = self
             collectionView.dataSource = self
+            collectionView.emptyDataSetSource = self
+            collectionView.emptyDataSetDelegate = self
             collectionView.register(AlbumCollectionViewCell.self)
         }
     }
@@ -88,6 +91,16 @@ extension AlbumsViewController: UICollectionViewDelegateFlowLayout {
         let width = (collectionView.frame.width - cellPadding) / numberOfCellsPerRow
         let height = width * cellAspectRatio
         return CGSize(width: width, height: height)
+    }
+}
+
+extension AlbumsViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    func title(forEmptyDataSet _: UIScrollView!) -> NSAttributedString! {
+        return NSAttributedString(string: viewModel.titleForEmptyDataSet())
+    }
+
+    func description(forEmptyDataSet _: UIScrollView!) -> NSAttributedString! {
+        return NSAttributedString(string: viewModel.descriptionForEmptyDataSet())
     }
 }
 

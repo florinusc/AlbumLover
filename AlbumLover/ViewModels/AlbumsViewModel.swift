@@ -66,4 +66,20 @@ class AlbumsViewModel {
     func shouldShowSearchButton() -> Bool {
         return artist == nil
     }
+
+    func titleForEmptyDataSet() -> String {
+        if repository is OfflineRepository {
+            return "Favorite Albums"
+        } else {
+            return "Albums"
+        }
+    }
+
+    func descriptionForEmptyDataSet() -> String {
+        if repository is OfflineRepository {
+            return "You don't have any saved albums, use the search button to look for your favorite albums."
+        } else {
+            return "We couldn't find any albums"
+        }
+    }
 }

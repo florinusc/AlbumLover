@@ -16,8 +16,12 @@ class AlbumCollectionViewCell: UICollectionViewCell {
     func configure(with albumViewModel: AlbumViewModel) {
         nameLabel.text = albumViewModel.name
         artistLabel.text = "by \(albumViewModel.artist)"
-        guard let url = URL(string: albumViewModel.imageURL) else { return }
-        imageView.setImage(with: url)
+        guard let placeholderImage = UIImage(named: "albumPlaceholder") else { return }
+        guard let url = URL(string: albumViewModel.imageURL) else {
+            imageView.image = placeholderImage
+            return
+        }
+        imageView.setImage(with: url, placeholder: placeholderImage)
     }
 
     override func prepareForReuse() {
