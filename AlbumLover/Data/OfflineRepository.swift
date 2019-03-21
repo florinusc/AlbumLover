@@ -10,7 +10,12 @@ import Foundation
 
 class OfflineRepository: Repository {
     func getAlbums(with _: String?, completion block: @escaping ([Album]?, Error?) -> Void) {
-        CoreDataManager.getAlbums { albums, error in
+        CoreDataManager.getAlbums { objects, error in
+            guard let objects = objects else {
+                block(nil, CustomError.coreDataRetrieveError)
+                return
+            }
+            let albums = objects.compactMap({ Album.from($0) })
             block(albums, error)
         }
     }

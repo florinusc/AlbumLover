@@ -10,26 +10,12 @@ import CoreData
 import UIKit
 
 class CoreDataManager {
-    private static let context: NSManagedObjectContext = {
+    static let context: NSManagedObjectContext = {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.persistentContainer.viewContext
     }()
 
-    static func addAlbum(with albumDetail: AlbumDetail, completion block: @escaping (Error?) -> Void) {
-        let album = AlbumDataObject(context: context)
-
-        album.name = albumDetail.name
-        album.artist = albumDetail.artist
-        album.normalImageURL = albumDetail.normalImageURL
-        album.highImageURL = albumDetail.highImageURL
-
-        albumDetail.tracks.forEach {
-            let track = TrackDataObject(context: context)
-            track.name = $0.name
-            track.duration = $0.duration
-            album.addToTracks(track)
-        }
-
+    static func addAlbum(_: AlbumDataObject, completion block: @escaping (Error?) -> Void) {
         do {
             try context.save()
             block(nil)
@@ -68,13 +54,12 @@ class CoreDataManager {
         }
     }
 
-    static func getAlbums(completion block: @escaping ([Album]?, Error?) -> Void) {
+    static func getAlbums(completion block: @escaping ([AlbumDataObject]?, Error?) -> Void) {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "AlbumDataObject")
 
         do {
             let result = try context.fetch(request)
-            let albums = result.compactMap({ Album.from($0 as! AlbumDataObject) })
-            block(albums, nil)
+            block(result as? [AlbumDataObject], nil)
         } catch {
             print("Failed to retrieve from Core Data")
             block(nil, CustomError.coreDataRetrieveError)

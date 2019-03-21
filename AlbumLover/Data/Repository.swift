@@ -23,7 +23,21 @@ extension Repository {
     }
 
     func addAlbum(albumDetail: AlbumDetail, completion block: @escaping (Error?) -> Void) {
-        CoreDataManager.addAlbum(with: albumDetail) { error in
+        let album = AlbumDataObject(context: CoreDataManager.context)
+
+        album.name = albumDetail.name
+        album.artist = albumDetail.artist
+        album.normalImageURL = albumDetail.normalImageURL
+        album.highImageURL = albumDetail.highImageURL
+
+        albumDetail.tracks.forEach {
+            let track = TrackDataObject(context: CoreDataManager.context)
+            track.name = $0.name
+            track.duration = $0.duration
+            album.addToTracks(track)
+        }
+
+        CoreDataManager.addAlbum(album) { error in
             block(error)
         }
     }
