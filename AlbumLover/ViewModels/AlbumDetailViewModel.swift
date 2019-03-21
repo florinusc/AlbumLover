@@ -105,4 +105,8 @@ class AlbumDetailViewModel {
     func isAlbumSaved() -> Bool {
         return isSaved
     }
+
+    func descriptionForEmptyTracksTable() -> String {
+        return "We couldn't find any tracks for this album"
+    }
 }

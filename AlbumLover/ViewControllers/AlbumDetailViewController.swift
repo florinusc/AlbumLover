@@ -6,6 +6,7 @@
 //  Copyright © 2019 Florin Uscatu. All rights reserved.
 //
 
+import DZNEmptyDataSet
 import UIKit
 
 class AlbumDetailViewController: UIViewController {
@@ -17,6 +18,8 @@ class AlbumDetailViewController: UIViewController {
         didSet {
             tableView.delegate = self
             tableView.dataSource = self
+            tableView.emptyDataSetSource = self
+            tableView.emptyDataSetDelegate = self
             tableView.tableFooterView = UIView()
         }
     }
@@ -94,6 +97,12 @@ extension AlbumDetailViewController: UITableViewDelegate, UITableViewDataSource 
         let cell = UITableViewCell()
         cell.textLabel?.text = viewModel.trackDetails(at: indexPath)
         return cell
+    }
+}
+
+extension AlbumDetailViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    func description(forEmptyDataSet _: UIScrollView!) -> NSAttributedString! {
+        return NSAttributedString(string: viewModel.descriptionForEmptyTracksTable())
     }
 }
 
