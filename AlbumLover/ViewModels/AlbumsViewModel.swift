@@ -44,19 +44,14 @@ class AlbumsViewModel {
         return AlbumViewModel(with: album)
     }
 
-    func getAlbumName(at indexPath: IndexPath) -> String? {
-        guard indexPath.item < albums.count else { return nil }
+    func albumDetailViewModel(at indexPath: IndexPath) -> AlbumDetailViewModel? {
+        guard indexPath.item < albums.count,
+            let repository = repository else { return nil }
         let album = albums[indexPath.item]
-        return album.name
+        return AlbumDetailViewModel(with: album.name, album.artist, repository: repository)
     }
 
-    func getArtistName(at indexPath: IndexPath) -> String? {
-        guard indexPath.item < albums.count else { return nil }
-        let album = albums[indexPath.item]
-        return album.artist
-    }
-
-    func getTitle() -> String {
+    func title() -> String {
         if let artist = artist {
             return artist.name
         }

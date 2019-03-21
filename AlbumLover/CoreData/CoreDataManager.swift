@@ -65,4 +65,18 @@ class CoreDataManager {
             block(nil, CustomError.coreDataRetrieveError)
         }
     }
+
+    static func getAlbum(with name: String, artist: String, completion block: @escaping (AlbumDataObject?, Error?) -> Void) {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "AlbumDataObject")
+        request.predicate = NSPredicate(format: "name = %@ AND artist = %@", name, artist)
+
+        do {
+            let result = try context.fetch(request)
+            let object = result.first as? AlbumDataObject
+            block(object, nil)
+        } catch {
+            print("Failed to retrieve from Core Data")
+            block(nil, CustomError.coreDataRetrieveError)
+        }
+    }
 }

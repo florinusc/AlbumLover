@@ -22,4 +22,12 @@ struct AlbumDetail {
                            highImageURL: albumDetailResource.image.first(where: { $0.size == "extralarge" })?.stringURL ?? "",
                            tracks: albumDetailResource.tracks.track.compactMap({ Track.from($0) }))
     }
+
+    static func from(_ albumDataObject: AlbumDataObject) -> AlbumDetail {
+        return AlbumDetail(name: albumDataObject.name ?? "",
+                           artist: albumDataObject.artist ?? "",
+                           normalImageURL: albumDataObject.normalImageURL ?? "",
+                           highImageURL: albumDataObject.highImageURL ?? "",
+                           tracks: albumDataObject.tracks?.compactMap({ Track.from($0 as! TrackDataObject) }) ?? [])
+    }
 }

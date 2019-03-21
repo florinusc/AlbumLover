@@ -44,7 +44,7 @@ class AlbumsViewController: UIViewController {
     }
 
     private func setupNavBar() {
-        title = viewModel.getTitle()
+        title = viewModel.title()
         guard viewModel.shouldShowSearchButton() else { return }
         let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(goToSearch))
         navigationItem.rightBarButtonItem = searchButton
@@ -59,9 +59,7 @@ class AlbumsViewController: UIViewController {
     }
 
     private func goToAlbumDetail(with indexPath: IndexPath) {
-        guard let albumName = viewModel.getAlbumName(at: indexPath),
-            let artistName = viewModel.getArtistName(at: indexPath) else { return }
-        let albumDetailViewModel = AlbumDetailViewModel(with: albumName, artistName, repository: OnlineRepository())
+        guard let albumDetailViewModel = viewModel.albumDetailViewModel(at: indexPath) else { return }
         let albumDetailViewController = AlbumDetailViewController.getInstance()
         albumDetailViewController.viewModel = albumDetailViewModel
         navigationController?.present(albumDetailViewController, animated: true, completion: nil)

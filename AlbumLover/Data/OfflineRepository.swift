@@ -20,9 +20,21 @@ class OfflineRepository: Repository {
         }
     }
 
-    func getAlbumDetails(with _: String, artistName _: String, completion block: @escaping (AlbumDetail?, Error?) -> Void) {
-        let track = Track(name: "The Power", duration: "423")
-        let albumDetail = AlbumDetail(name: "Believe", artist: "Cher", normalImageURL: "https://lastfm-img2.akamaized.net/i/u/300x300/3b54885952161aaea4ce2965b2db1638.png", highImageURL: "https://lastfm-img2.akamaized.net/i/u/300x300/3b54885952161aaea4ce2965b2db1638.png", tracks: [track])
-        block(albumDetail, nil)
+    func getAlbumDetails(with albumName: String, artistName: String, completion block: @escaping (AlbumDetail?, Error?) -> Void) {
+        CoreDataManager.getAlbum(with: albumName, artist: artistName) { object, error in
+            guard error == nil else {
+                block(nil, error)
+                return
+            }
+            guard let object = object else {
+                block(nil, CustomError.coreDataRetrieveError)
+                return
+            }
+            block(AlbumDetail.from(object), nil)
+        }
+
+//        let track = Track(name: "The Power", duration: "423")
+//        let albumDetail = AlbumDetail(name: "Believe", artist: "Cher", normalImageURL: "https://lastfm-img2.akamaized.net/i/u/300x300/3b54885952161aaea4ce2965b2db1638.png", highImageURL: "https://lastfm-img2.akamaized.net/i/u/300x300/3b54885952161aaea4ce2965b2db1638.png", tracks: [track])
+//        block(albumDetail, nil)
     }
 }
