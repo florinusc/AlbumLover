@@ -32,6 +32,7 @@ class AlbumDetailViewController: UIViewController {
     }
 
     private func setup() {
+        viewModel.saveButtonUpdateHandler = updateSaveButton
         viewModel.getAlbumDetails { [weak self] error in
             guard let strongSelf = self else { return }
             guard error == nil else {
@@ -40,7 +41,6 @@ class AlbumDetailViewController: UIViewController {
             }
             strongSelf.loadDetails()
         }
-        viewModel.saveButtonUpdateHandler = updateSaveButton
     }
 
     private func loadDetails() {
