@@ -17,4 +17,9 @@ extension UIViewController {
 
         present(alert, animated: true, completion: nil)
     }
+
+    func presentAlert(for error: Error?) {
+        guard let error = error else { return }
+        presentAlert(with: "Error", message: error.localizedDescription)
+    }
 }

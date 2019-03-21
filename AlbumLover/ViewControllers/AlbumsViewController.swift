@@ -36,7 +36,7 @@ class AlbumsViewController: UIViewController {
         viewModel?.getAlbums(completion: { [weak self] error in
             guard let strongSelf = self else { return }
             guard error == nil else {
-                strongSelf.presentAlert(with: "Error", message: error!.localizedDescription)
+                strongSelf.presentAlert(for: error)
                 return
             }
             strongSelf.collectionView.reloadData()
@@ -48,7 +48,7 @@ class AlbumsViewController: UIViewController {
         guard viewModel.shouldShowSearchButton() else { return }
         let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(goToSearch))
         navigationItem.rightBarButtonItem = searchButton
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.hideBackButtonText()
     }
 
     @objc private func goToSearch() {

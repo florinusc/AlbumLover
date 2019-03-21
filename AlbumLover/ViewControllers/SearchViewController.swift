@@ -12,7 +12,7 @@ class SearchViewController: UIViewController {
     @IBOutlet private var searchBar: UISearchBar! {
         didSet {
             searchBar.delegate = self
-            searchBar.placeholder = "Search for artist"
+            searchBar.placeholder = Constants.searchBarPlaceholder
         }
     }
 
@@ -32,8 +32,8 @@ class SearchViewController: UIViewController {
     }
 
     private func setup() {
-        title = "Search"
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        title = Constants.searchTitle
+        navigationItem.hideBackButtonText()
         searchBar.becomeFirstResponder()
     }
 
@@ -41,7 +41,7 @@ class SearchViewController: UIViewController {
         viewModel.getArtists(with: text.lowercased(), completion: { [weak self] error in
             guard let strongSelf = self else { return }
             guard error == nil else {
-                strongSelf.presentAlert(with: "Error", message: error!.localizedDescription)
+                strongSelf.presentAlert(for: error)
                 return
             }
             strongSelf.tableView.reloadData()

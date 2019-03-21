@@ -36,7 +36,7 @@ class AlbumDetailViewController: UIViewController {
         viewModel.getAlbumDetails { [weak self] error in
             guard let strongSelf = self else { return }
             guard error == nil else {
-                strongSelf.presentAlert(with: "Error", message: error!.localizedDescription)
+                strongSelf.presentAlert(for: error)
                 return
             }
             strongSelf.loadDetails()
@@ -47,7 +47,7 @@ class AlbumDetailViewController: UIViewController {
         albumNameLabel.text = viewModel.getAlbumName()
         artistNameLabel.text = viewModel.getArtistName()
         tableView.reloadData()
-        guard let placeholderImage = UIImage(named: "albumPlaceholder") else { return }
+        guard let placeholderImage = UIImage(named: Constants.albumPlaceholderImageName) else { return }
         guard let imageURL = viewModel.imageURL() else {
             imageView.image = placeholderImage
             return
@@ -59,7 +59,7 @@ class AlbumDetailViewController: UIViewController {
         viewModel.addAlbumLocally { [weak self] error in
             guard let strongSelf = self else { return }
             guard error == nil else {
-                strongSelf.presentAlert(with: "Error", message: error!.localizedDescription)
+                strongSelf.presentAlert(for: error)
                 return
             }
         }
@@ -69,14 +69,14 @@ class AlbumDetailViewController: UIViewController {
         viewModel.removeAlbumFromLocalStorage { [weak self] error in
             guard let strongSelf = self else { return }
             guard error == nil else {
-                strongSelf.presentAlert(with: "Error", message: error!.localizedDescription)
+                strongSelf.presentAlert(for: error)
                 return
             }
         }
     }
 
     private func updateSaveButton(saved: Bool) {
-        heartButton.setImage(UIImage(named: saved ? "heartFull" : "heartEmpty"), for: .normal)
+        heartButton.setImage(UIImage(named: saved ? Constants.heartFullImageName : Constants.heartEmptyImageName), for: .normal)
     }
 
     @IBAction private func onCloseButtonTapped(_: UIButton) {

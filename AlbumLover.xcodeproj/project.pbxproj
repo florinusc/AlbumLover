@@ -54,6 +54,8 @@
 		9FAB81182240E223004D0F06 /* AlbumDetailResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB81172240E223004D0F06 /* AlbumDetailResource.swift */; };
 		9FBFC79E2243B3CA005BDA4A /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBFC79D2243B3CA005BDA4A /* ViewModel.swift */; };
 		9FBFC7A02243B81A005BDA4A /* ViewModelBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBFC79F2243B81A005BDA4A /* ViewModelBased.swift */; };
+		9FBFC7A22243BC0C005BDA4A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBFC7A12243BC0C005BDA4A /* Constants.swift */; };
+		9FBFC7A42243BD15005BDA4A /* UINavigationItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBFC7A32243BD15005BDA4A /* UINavigationItem+Extension.swift */; };
 		F0BF9D687144B1AAEB280CC4 /* Pods_AlbumLover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90D547C9BD71F44E68DA93D7 /* Pods_AlbumLover.framework */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +124,8 @@
 		9FAB81172240E223004D0F06 /* AlbumDetailResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailResource.swift; sourceTree = "<group>"; };
 		9FBFC79D2243B3CA005BDA4A /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		9FBFC79F2243B81A005BDA4A /* ViewModelBased.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBased.swift; sourceTree = "<group>"; };
+		9FBFC7A12243BC0C005BDA4A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9FBFC7A32243BD15005BDA4A /* UINavigationItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationItem+Extension.swift"; sourceTree = "<group>"; };
 		EB1A1BF88F7325883CBD1816 /* Pods-AlbumLover.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlbumLover.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlbumLover/Pods-AlbumLover.debug.xcconfig"; sourceTree = "<group>"; };
 		FD37D6DBBE5F96E1774C5692 /* Pods_AlbumLoverTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlbumLoverTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -247,6 +251,7 @@
 				9FAB810C223EBF0E004D0F06 /* JSONError.swift */,
 				9FBFC79D2243B3CA005BDA4A /* ViewModel.swift */,
 				9FBFC79F2243B81A005BDA4A /* ViewModelBased.swift */,
+				9FBFC7A12243BC0C005BDA4A /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 				9F6CB4D4223D0929003A88A6 /* UIImageView+Extension.swift */,
 				9F6CB4E8223D226C003A88A6 /* UIViewController+Extension.swift */,
 				9FAB81102240C170004D0F06 /* String+Extension.swift */,
+				9FBFC7A32243BD15005BDA4A /* UINavigationItem+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -563,6 +569,7 @@
 				9F6CB4BC223CF31A003A88A6 /* AlbumsViewModel.swift in Sources */,
 				9FBFC7A02243B81A005BDA4A /* ViewModelBased.swift in Sources */,
 				9F6CB49A223CF021003A88A6 /* AlbumLover.xcdatamodeld in Sources */,
+				9FBFC7A22243BC0C005BDA4A /* Constants.swift in Sources */,
 				9F6CB4BF223CF45E003A88A6 /* Storyboarded.swift in Sources */,
 				9F6CB4C8223D053B003A88A6 /* UITableViewCell+Extension.swift in Sources */,
 				9FAB810D223EBF0E004D0F06 /* JSONError.swift in Sources */,
@@ -576,6 +583,7 @@
 				9F8099BA223D4BE3006FBF81 /* SearchViewModel.swift in Sources */,
 				9FAB810F223FF173004D0F06 /* Track.swift in Sources */,
 				9F8099B6223D48C3006FBF81 /* SearchViewController.swift in Sources */,
+				9FBFC7A42243BD15005BDA4A /* UINavigationItem+Extension.swift in Sources */,
 				9F6CB4DC223D0F54003A88A6 /* Repository.swift in Sources */,
 				9F6CB4C3223D04E0003A88A6 /* ReusableView.swift in Sources */,
 				9FAB81162240E1F8004D0F06 /* TrackResource.swift in Sources */,
