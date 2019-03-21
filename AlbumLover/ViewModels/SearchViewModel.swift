@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SearchViewModel {
+class SearchViewModel: ViewModel {
     private var artists = [Artist]()
     private var repository: Repository!
 

@@ -106,8 +106,6 @@ extension AlbumDetailViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDeleg
     }
 }
 
-extension AlbumDetailViewController: Storyboarded {
-    static var storyboardName: String {
-        return "Main"
-    }
+extension AlbumDetailViewController: Storyboarded, ViewModelBased {
+    static var storyboardName: Storyboards { return .main }
 }

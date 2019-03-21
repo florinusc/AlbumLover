@@ -8,7 +8,7 @@
 
 import Foundation
 
-class AlbumDetailViewModel {
+class AlbumDetailViewModel: ViewModel {
     private var albumName: String!
     private var artistName: String!
     private var repository: Repository!

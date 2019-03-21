@@ -82,8 +82,6 @@ extension SearchViewController: UISearchBarDelegate {
     }
 }
 
-extension SearchViewController: Storyboarded {
-    static var storyboardName: String {
-        return "Main"
-    }
+extension SearchViewController: Storyboarded, ViewModelBased {
+    static var storyboardName: Storyboards { return .main }
 }

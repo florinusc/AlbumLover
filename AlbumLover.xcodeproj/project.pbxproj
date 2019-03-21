@@ -52,6 +52,8 @@
 		9FAB81142240D340004D0F06 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB81132240D340004D0F06 /* CoreDataManager.swift */; };
 		9FAB81162240E1F8004D0F06 /* TrackResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB81152240E1F8004D0F06 /* TrackResource.swift */; };
 		9FAB81182240E223004D0F06 /* AlbumDetailResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB81172240E223004D0F06 /* AlbumDetailResource.swift */; };
+		9FBFC79E2243B3CA005BDA4A /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBFC79D2243B3CA005BDA4A /* ViewModel.swift */; };
+		9FBFC7A02243B81A005BDA4A /* ViewModelBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBFC79F2243B81A005BDA4A /* ViewModelBased.swift */; };
 		F0BF9D687144B1AAEB280CC4 /* Pods_AlbumLover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90D547C9BD71F44E68DA93D7 /* Pods_AlbumLover.framework */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +120,8 @@
 		9FAB81132240D340004D0F06 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		9FAB81152240E1F8004D0F06 /* TrackResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackResource.swift; sourceTree = "<group>"; };
 		9FAB81172240E223004D0F06 /* AlbumDetailResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailResource.swift; sourceTree = "<group>"; };
+		9FBFC79D2243B3CA005BDA4A /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		9FBFC79F2243B81A005BDA4A /* ViewModelBased.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBased.swift; sourceTree = "<group>"; };
 		EB1A1BF88F7325883CBD1816 /* Pods-AlbumLover.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlbumLover.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlbumLover/Pods-AlbumLover.debug.xcconfig"; sourceTree = "<group>"; };
 		FD37D6DBBE5F96E1774C5692 /* Pods_AlbumLoverTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlbumLoverTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -241,6 +245,8 @@
 				9F6CB4C2223D04E0003A88A6 /* ReusableView.swift */,
 				9F6CB4E6223D130E003A88A6 /* CustomError.swift */,
 				9FAB810C223EBF0E004D0F06 /* JSONError.swift */,
+				9FBFC79D2243B3CA005BDA4A /* ViewModel.swift */,
+				9FBFC79F2243B81A005BDA4A /* ViewModelBased.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -555,6 +561,7 @@
 				9FAB8109223EB7B7004D0F06 /* SessionManager.swift in Sources */,
 				9F6CB4E9223D226C003A88A6 /* UIViewController+Extension.swift in Sources */,
 				9F6CB4BC223CF31A003A88A6 /* AlbumsViewModel.swift in Sources */,
+				9FBFC7A02243B81A005BDA4A /* ViewModelBased.swift in Sources */,
 				9F6CB49A223CF021003A88A6 /* AlbumLover.xcdatamodeld in Sources */,
 				9F6CB4BF223CF45E003A88A6 /* Storyboarded.swift in Sources */,
 				9F6CB4C8223D053B003A88A6 /* UITableViewCell+Extension.swift in Sources */,
@@ -572,6 +579,7 @@
 				9F6CB4DC223D0F54003A88A6 /* Repository.swift in Sources */,
 				9F6CB4C3223D04E0003A88A6 /* ReusableView.swift in Sources */,
 				9FAB81162240E1F8004D0F06 /* TrackResource.swift in Sources */,
+				9FBFC79E2243B3CA005BDA4A /* ViewModel.swift in Sources */,
 				9F6CB492223CF021003A88A6 /* AppDelegate.swift in Sources */,
 				9FAB8106223E9A64004D0F06 /* AlbumDetailViewModel.swift in Sources */,
 				9FAB8104223E696C004D0F06 /* AlbumDetail.swift in Sources */,

@@ -52,16 +52,13 @@ class AlbumsViewController: UIViewController {
     }
 
     @objc private func goToSearch() {
-        let searchViewModel = SearchViewModel()
-        let searchViewController = SearchViewController.getInstance()
-        searchViewController.viewModel = searchViewModel
+        let searchViewController = SearchViewController.instantiate(with: SearchViewModel())
         navigationController?.pushViewController(searchViewController, animated: true)
     }
 
     private func goToAlbumDetail(with indexPath: IndexPath) {
         guard let albumDetailViewModel = viewModel.albumDetailViewModel(at: indexPath) else { return }
-        let albumDetailViewController = AlbumDetailViewController.getInstance()
-        albumDetailViewController.viewModel = albumDetailViewModel
+        let albumDetailViewController = AlbumDetailViewController.instantiate(with: albumDetailViewModel)
         navigationController?.present(albumDetailViewController, animated: true, completion: nil)
     }
 }
@@ -102,8 +99,6 @@ extension AlbumsViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     }
 }
 
-extension AlbumsViewController: Storyboarded {
-    static var storyboardName: String {
-        return "Main"
-    }
+extension AlbumsViewController: Storyboarded, ViewModelBased {
+    static var storyboardName: Storyboards { return .main }
 }

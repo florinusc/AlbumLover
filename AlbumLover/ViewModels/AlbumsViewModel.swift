@@ -8,7 +8,7 @@
 
 import Foundation
 
-class AlbumsViewModel {
+class AlbumsViewModel: ViewModel {
     private var repository: Repository?
     private var albums: [Album] = []
     private var artist: Artist?
