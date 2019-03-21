@@ -14,7 +14,7 @@ protocol Repository {
     func getAlbumDetails(with albumName: String, artistName: String, completion block: @escaping (AlbumDetail?, Error?) -> Void)
     func addAlbum(albumDetail: AlbumDetail, completion block: @escaping (Error?) -> Void)
     func removeAlbum(albumDetail: AlbumDetail, completion block: @escaping (Error?) -> Void)
-    func checkAlbum(albumDetail: AlbumDetail, completion block: @escaping (Bool?, Error?) -> Void)
+    func checkAlbum(name: String, artist: String, completion block: @escaping (Bool?, Error?) -> Void)
 }
 
 extension Repository {
@@ -48,8 +48,8 @@ extension Repository {
         }
     }
 
-    func checkAlbum(albumDetail: AlbumDetail, completion block: @escaping (Bool?, Error?) -> Void) {
-        CoreDataManager.checkAlbum(with: albumDetail) { result, error in
+    func checkAlbum(name: String, artist: String, completion block: @escaping (Bool?, Error?) -> Void) {
+        CoreDataManager.checkAlbum(with: name, artist: artist) { result, error in
             block(result, error)
         }
     }

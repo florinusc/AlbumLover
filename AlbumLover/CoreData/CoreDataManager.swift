@@ -41,9 +41,9 @@ class CoreDataManager {
         }
     }
 
-    static func checkAlbum(with albumDetail: AlbumDetail, completion block: @escaping (Bool?, Error?) -> Void) {
+    static func checkAlbum(with name: String, artist: String, completion block: @escaping (Bool?, Error?) -> Void) {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "AlbumDataObject")
-        request.predicate = NSPredicate(format: "name = %@", albumDetail.name)
+        request.predicate = NSPredicate(format: "name = %@ AND artist = %@", name, artist)
 
         do {
             let objects = try context.fetch(request)

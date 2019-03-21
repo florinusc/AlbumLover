@@ -45,7 +45,7 @@ class AlbumDetailViewModel: ViewModel {
     private func checkIfAlbumIsSaved() {
         guard isSaved == nil else { return }
         guard let albumDetail = albumDetails else { return }
-        repository.checkAlbum(albumDetail: albumDetail) { [weak self] result, error in
+        repository.checkAlbum(name: albumDetail.name, artist: albumDetail.artist) { [weak self] result, error in
             guard error == nil,
                 let result = result,
                 let strongSelf = self else {
