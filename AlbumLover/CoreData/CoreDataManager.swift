@@ -10,12 +10,26 @@ import CoreData
 import UIKit
 
 class CoreDataManager {
-    static let context: NSManagedObjectContext = {
+    private static let context: NSManagedObjectContext = {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.persistentContainer.viewContext
     }()
 
-    static func addAlbum(_: AlbumDataObject, completion block: @escaping (Error?) -> Void) {
+    static func addAlbum(_ albumDetail: AlbumDetail, completion block: @escaping (Error?) -> Void) {
+        let album = AlbumDataObject(context: context)
+
+        album.name = albumDetail.name
+        album.artist = albumDetail.artist
+        album.normalImageURL = albumDetail.normalImageURL
+        album.highImageURL = albumDetail.highImageURL
+
+        albumDetail.tracks.forEach {
+            let track = TrackDataObject(context: CoreDataManager.context)
+            track.name = $0.name
+            track.duration = $0.duration
+            album.addToTracks(track)
+        }
+
         do {
             try context.save()
             block(nil)

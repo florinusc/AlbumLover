@@ -244,13 +244,8 @@
 			isa = PBXGroup;
 			children = (
 				9F6CB4C4223D0509003A88A6 /* Extensions */,
-				9F6CB4BE223CF45E003A88A6 /* Storyboarded.swift */,
-				9F6CB4C0223D04D6003A88A6 /* NibLoadableView.swift */,
-				9F6CB4C2223D04E0003A88A6 /* ReusableView.swift */,
-				9F6CB4E6223D130E003A88A6 /* CustomError.swift */,
-				9FAB810C223EBF0E004D0F06 /* JSONError.swift */,
-				9FBFC79D2243B3CA005BDA4A /* ViewModel.swift */,
-				9FBFC79F2243B81A005BDA4A /* ViewModelBased.swift */,
+				9FBFC7A52244B931005BDA4A /* Protocols */,
+				9FBFC7A62244B945005BDA4A /* Errors */,
 				9FBFC7A12243BC0C005BDA4A /* Constants.swift */,
 			);
 			path = Helpers;
@@ -345,6 +340,27 @@
 				9FAB81132240D340004D0F06 /* CoreDataManager.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		9FBFC7A52244B931005BDA4A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9FBFC79D2243B3CA005BDA4A /* ViewModel.swift */,
+				9FBFC79F2243B81A005BDA4A /* ViewModelBased.swift */,
+				9F6CB4BE223CF45E003A88A6 /* Storyboarded.swift */,
+				9F6CB4C0223D04D6003A88A6 /* NibLoadableView.swift */,
+				9F6CB4C2223D04E0003A88A6 /* ReusableView.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		9FBFC7A62244B945005BDA4A /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				9F6CB4E6223D130E003A88A6 /* CustomError.swift */,
+				9FAB810C223EBF0E004D0F06 /* JSONError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 		DA81892D5806462047554E21 /* Pods */ = {
