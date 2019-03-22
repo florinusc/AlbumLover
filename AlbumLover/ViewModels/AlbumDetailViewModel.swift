@@ -107,6 +107,6 @@ class AlbumDetailViewModel: ViewModel {
     }
 
     func descriptionForEmptyTracksTable() -> String {
-        return "We couldn't find any tracks for this album"
+        return Constants.emptyTracksDataSetDescription
     }
 }

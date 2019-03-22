@@ -55,7 +55,7 @@ class AlbumsViewModel: ViewModel {
         if let artist = artist {
             return artist.name
         }
-        return repository is OfflineRepository ? "Favorite Albums" : ""
+        return repository is OfflineRepository ? Constants.favoriteAlbumsTitle : ""
     }
 
     func shouldShowSearchButton() -> Bool {
@@ -64,17 +64,17 @@ class AlbumsViewModel: ViewModel {
 
     func titleForEmptyDataSet() -> String {
         if repository is OfflineRepository {
-            return "Favorite Albums"
+            return Constants.favoriteAlbumsTitle
         } else {
-            return "Albums"
+            return Constants.emptyDataSetTitle
         }
     }
 
     func descriptionForEmptyDataSet() -> String {
         if repository is OfflineRepository {
-            return "You don't have any saved albums, use the search button to look for your favorite albums."
+            return Constants.emptyFavoriteAlbumsDescription
         } else {
-            return "We couldn't find any albums"
+            return Constants.emptyDataSetDescription
         }
     }
 }

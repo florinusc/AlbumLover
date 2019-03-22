@@ -15,4 +15,11 @@ enum Constants {
 
     static let searchTitle = "Search"
     static let searchBarPlaceholder = "Search for artist"
+
+    static let favoriteAlbumsTitle = "Favorite Albums"
+    static let emptyDataSetTitle = "Albums"
+    static let emptyFavoriteAlbumsDescription = "You don't have any saved albums, use the search button to look for your favorite albums."
+    static let emptyDataSetDescription = "We couldn't find any albums"
+
+    static let emptyTracksDataSetDescription = "We couldn't find any tracks for this album"
 }

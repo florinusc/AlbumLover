@@ -144,6 +144,7 @@
                                     <constraint firstAttribute="height" constant="30" id="5j7-Ve-3xy"/>
                                     <constraint firstAttribute="width" constant="30" id="fix-D5-C0U"/>
                                 </constraints>
+                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                                 <state key="normal" image="heartEmpty"/>
                                 <connections>
                                     <action selector="onHeartButtonTapped:" destination="xNY-Mz-3av" eventType="touchUpInside" id="OA9-m3-JRy"/>
