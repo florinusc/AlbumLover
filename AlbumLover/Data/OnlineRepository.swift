@@ -9,8 +9,8 @@
 import Foundation
 
 class OnlineRepository: Repository {
-    func getAlbums(with artistID: String?, completion block: @escaping ([Album]?, Error?) -> Void) {
-        SessionManager.getResources(type: AlbumResources.self, requestType: .albums(artistID: artistID)) { albumResources, error in
+    func getAlbums(with artistName: String?, completion block: @escaping ([Album]?, Error?) -> Void) {
+        SessionManager.getResources(type: AlbumResources.self, requestType: .albums(artistName: artistName)) { albumResources, error in
             guard error == nil else {
                 block(nil, error!)
                 return

@@ -9,7 +9,7 @@
 import Foundation
 
 enum RequestType {
-    case albums(artistID: String?)
+    case albums(artistName: String?)
     case artists(name: String)
     case albumDetails(albumName: String, artistName: String)
 
@@ -21,10 +21,10 @@ enum RequestType {
         components.queryItems = [URLQueryItem(name: "api_key", value: "bfd53bf8f256446203ae1a76eb2645d5"),
                                  URLQueryItem(name: "format", value: "json")]
         switch self {
-        case let .albums(artistID):
+        case let .albums(artistName):
             components.queryItems?.append(URLQueryItem(name: "method", value: "artist.gettopalbums"))
-            if let artistID = artistID {
-                components.queryItems?.append(URLQueryItem(name: "mbid", value: artistID))
+            if let artistName = artistName {
+                components.queryItems?.append(URLQueryItem(name: "artist", value: artistName))
             }
         case let .artists(name):
             components.queryItems?.append(URLQueryItem(name: "method", value: "artist.search"))

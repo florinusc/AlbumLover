@@ -43,7 +43,7 @@ extension Repository {
     }
 
     func removeAlbum(albumDetail: AlbumDetail, completion block: @escaping (Error?) -> Void) {
-        CoreDataManager.removeAlbum(with: albumDetail) { error in
+        CoreDataManager.removeAlbum(with: albumDetail.name, artist: albumDetail.artist) { error in
             block(error)
         }
     }
