@@ -20,9 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
 
         if let window = window {
-            let mainViewController = AlbumsViewController.getInstance()
-            let mainViewModel = AlbumsViewModel()
-            mainViewController.viewModel = mainViewModel
+            let mainViewController = AlbumsViewController.instantiate(with: AlbumsViewModel())
             navigationController = UINavigationController(rootViewController: mainViewController)
             navigationController?.navigationBar.tintColor = .black
             window.rootViewController = navigationController

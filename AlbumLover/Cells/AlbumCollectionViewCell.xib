@@ -45,13 +45,23 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heartFull" translatesAutoresizingMaskIntoConstraints="NO" id="Tpa-xu-Wt9">
+                        <rect key="frame" x="10" y="10" width="25" height="25"/>
+                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="MHX-sa-0Rk"/>
+                            <constraint firstAttribute="width" constant="25" id="OsL-kL-AaE"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="Tpa-xu-Wt9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="2x6-G2-S0I"/>
                 <constraint firstAttribute="trailing" secondItem="APb-Bg-R29" secondAttribute="trailing" constant="10" id="3C5-ED-qTn"/>
                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="APb-Bg-R29" secondAttribute="bottom" constant="10" id="4KV-am-jop"/>
                 <constraint firstItem="916-Nu-p8W" firstAttribute="top" secondItem="1m8-xk-gB2" secondAttribute="bottom" constant="10" id="847-z3-aE5"/>
                 <constraint firstItem="APb-Bg-R29" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="DWq-BY-vFj"/>
+                <constraint firstItem="Tpa-xu-Wt9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="DrA-7i-xM5"/>
                 <constraint firstAttribute="trailing" secondItem="1m8-xk-gB2" secondAttribute="trailing" id="FWE-9X-cyW"/>
                 <constraint firstItem="1m8-xk-gB2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="IFM-Ey-wce"/>
                 <constraint firstItem="APb-Bg-R29" firstAttribute="top" secondItem="916-Nu-p8W" secondAttribute="bottom" constant="5" id="LW5-a8-wqb"/>
@@ -63,10 +73,14 @@
             <size key="customSize" width="171" height="173"/>
             <connections>
                 <outlet property="artistLabel" destination="APb-Bg-R29" id="0nc-7u-oOs"/>
+                <outlet property="heartImageView" destination="Tpa-xu-Wt9" id="QH8-KB-bZh"/>
                 <outlet property="imageView" destination="1m8-xk-gB2" id="wZC-1M-EpA"/>
                 <outlet property="nameLabel" destination="916-Nu-p8W" id="Zrx-Fs-sJk"/>
             </connections>
-            <point key="canvasLocation" x="-167.19999999999999" y="82.3088455772114"/>
+            <point key="canvasLocation" x="-168" y="81.859070464767626"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="heartFull" width="75" height="75"/>
+    </resources>
 </document>

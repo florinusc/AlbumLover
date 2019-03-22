@@ -12,10 +12,12 @@ struct AlbumViewModel {
     var name: String
     var artist: String
     var imageURL: String
+    var local: Bool
 
-    init(with album: Album) {
+    init(with album: Album, local: Bool) {
         name = album.name
         artist = album.artist
         imageURL = album.imageURL
+        self.local = local
     }
 }

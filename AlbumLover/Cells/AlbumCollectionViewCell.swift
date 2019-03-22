@@ -12,10 +12,14 @@ class AlbumCollectionViewCell: UICollectionViewCell {
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var nameLabel: UILabel!
     @IBOutlet private var artistLabel: UILabel!
+    @IBOutlet private var heartImageView: UIImageView! {
+        didSet { heartImageView.tintColor = .red }
+    }
 
     func configure(with albumViewModel: AlbumViewModel) {
         nameLabel.text = albumViewModel.name
         artistLabel.text = "by \(albumViewModel.artist)"
+        heartImageView.isHidden = !albumViewModel.local
         guard let placeholderImage = UIImage(named: Constants.albumPlaceholderImageName) else { return }
         guard let url = URL(string: albumViewModel.imageURL) else {
             imageView.image = placeholderImage

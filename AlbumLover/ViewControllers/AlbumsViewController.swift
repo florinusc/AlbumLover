@@ -70,7 +70,8 @@ extension AlbumsViewController: UICollectionViewDelegate, UICollectionViewDataSo
 
     func collectionView(_: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: AlbumCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
-        if let albumViewModel = viewModel.albumViewModel(at: indexPath) {
+        viewModel.albumViewModel(at: indexPath) { albumViewModel in
+            guard let albumViewModel = albumViewModel else { return }
             cell.configure(with: albumViewModel)
         }
         return cell

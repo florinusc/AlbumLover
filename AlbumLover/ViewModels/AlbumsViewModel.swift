@@ -12,6 +12,13 @@ class AlbumsViewModel: ViewModel {
     private var repository: Repository?
     private var albums: [Album] = []
     private var artist: Artist?
+    private var albumViewModels: [AlbumViewModel] {
+        var local: Bool {
+            if repository is OfflineRepository { return true }
+            return false
+        }
+        return albums.map({ AlbumViewModel(with: $0, local: local) })
+    }
 
     init(with repository: Repository = OfflineRepository(), artist: Artist? = nil) {
         self.repository = repository
@@ -38,10 +45,20 @@ class AlbumsViewModel: ViewModel {
         return albums.count
     }
 
-    func albumViewModel(at indexPath: IndexPath) -> AlbumViewModel? {
-        guard indexPath.item < albums.count else { return nil }
-        let album = albums[indexPath.item]
-        return AlbumViewModel(with: album)
+    func albumViewModel(at indexPath: IndexPath, completion block: @escaping (AlbumViewModel?) -> Void) {
+        guard indexPath.item < albums.count else {
+            block(nil)
+            return
+        }
+        var albumViewModel = albumViewModels[indexPath.item]
+        repository?.checkAlbum(name: albumViewModel.name, artist: albumViewModel.artist, completion: { local, error in
+            guard error == nil, let local = local else {
+                block(albumViewModel)
+                return
+            }
+            albumViewModel.local = local
+            block(albumViewModel)
+        })
     }
 
     func albumDetailViewModel(at indexPath: IndexPath) -> AlbumDetailViewModel? {
