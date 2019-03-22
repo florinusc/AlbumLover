@@ -18,7 +18,7 @@ enum Constants {
 
     static let favoriteAlbumsTitle = "Favorite Albums"
     static let emptyDataSetTitle = "Albums"
-    static let emptyFavoriteAlbumsDescription = "You don't have any saved albums, use the search button to look for your favorite albums."
+    static let emptyFavoriteAlbumsDescription = "You don't have any saved albums, use the search button to look for the albums of your favorite artist"
     static let emptyDataSetDescription = "We couldn't find any albums"
 
     static let emptyTracksDataSetDescription = "We couldn't find any tracks for this album"
